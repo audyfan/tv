@@ -4,12 +4,12 @@ CCTV14,https://stream1.freetv.fun/cctv-14-shao-er-2.m3u8
 CCTV14,http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000008170/
 CCTV14,http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010207/
 CCTV14,http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000006673/
-小猪佩奇,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
-YOYO TV,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV63.m3u8
-YOYO TV,https://ythls.armelin.one/channel/UCiWRSesvSYmY7YOyz0tv_zQ.m3u8
+ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
+Animax(HK),http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
 CN卡通,http://125.227.210.55:8167/VideoInput/play.ts
 CN卡通,https://stream1.freetv.fun/cnqia-tong-1.ctv
 CN卡通,p3p://108.181.20.159:40159/61ded38e000d52023d43f93e0ee00012
+i-Fun动漫台,http://209.141.58.162:4994/proxy?url=http%3A//209.141.58.162%3A5050/litv/litv-ftv15
 Nick动画1,http://37.27.111.214:8080/live/12/hls.m3u8
 Nick动画2,http://37.27.111.214:8080/live/22/hls.m3u8
 海绵宝宝,http://diyp.zxxoo.work/huya/11352919
@@ -54,22 +54,24 @@ Nick动画2,http://37.27.111.214:8080/live/22/hls.m3u8
 动漫秀场,http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226197/index.m3u8
 动漫秀场,http://kxrj.site:35455/itv/5000000011000031113.m3u8?cdn=bestzb
 
-哆啦A梦,http://cfss.cc/cdn/hy/11601963.m3u8
-猫和老鼠,http://cfss.cc/cdn/hy/11352879.m3u8
-蜡笔小新,http://cfss.cc/cdn/hy/11352970.m3u8
-
+中华小当家,http://61.221.215.25:8800/hls/40/index.m3u8
+哆啦A梦,http://www.52sw.top:678/play/huya.php?id=11601963
+哆啦A梦,http://cdn.jdshipin.com:8880/huya.php?id=11601963
 哆啦A梦,http://120.77.28.4:8648/huya.php?id=11601963
+哆啦A梦：大雄与天空的理想乡,https://hlsdofviewmgspvod.aikan.miguvideo.com/depository_cidcobs_wxlz03/asset/zhengshi/5105/223/257/5105223257/media/5105223257_5206936022_56.mp4
+哆啦A梦：大雄与天空的理想乡（普通话）,https://hlsdofviewmgspvod.aikan.miguvideo.com/depository_cidcobs_wxlz03/asset/zhengshi/5105/223/351/5105223351/media/5105223351_5206941130_56.mp4
 猫和老鼠,http://120.77.28.4:8648/huya.php?id=11352879
 蜡笔小新,http://120.77.28.4:8648/huya.php?id=11352970
 iHOT爱动漫,http://[2409:8087:5e08:24::11]:6610/000000001000/2000000004000000059/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000059&IASHttpSessionId=OTT19019320240419154124000281
 24H国漫热播,https://lunbo.freetv.top/yy/1353937086
+小猪佩奇,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
+YOYO TV,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV63.m3u8
+YOYO TV,https://ythls.armelin.one/channel/UCiWRSesvSYmY7YOyz0tv_zQ.m3u8
 
-ZooMoo,http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
-Animax(HK),http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
+
 3ABN Kids,https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8
 PBS儿童台(EN),https://stream1.freetv.fun/mei-guo-ce-shi-pbs-kids-1.ctv
 Japanim TV,https://foxkidstv.be:3369/stream/play.m3u8
 Kuriakos Kids,https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8
 XilamTV,https://xilam-animation-1-fr.samsung.wurl.tv/playlist.m3u8
 FanpopTV,https://streaming-cl.sh1ny.space/memfs/e16d2f72-70b5-4bf5-b9c5-107b6390a10f.m3u8
-
