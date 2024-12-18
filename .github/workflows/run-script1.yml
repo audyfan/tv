@@ -38,13 +38,21 @@ jobs:
           touch assets/script/processed_index.txt
           touch assets/script/merged_output.txt
 
-      # 提交并推送更改
-      - name: Commit changes
+      # 配置git用户信息
+      - name: Configure git user
         run: |
-          git config --global user.name "Your Name"
-          git config --global user.email "your-email@example.com"
+          git config --global user.name "qingtingjjjjjjj"
+          git config --global user.email "quwuping11@gmail.com"
+
+      # 检查文件更改，并提交
+      - name: Check for file changes and commit
+        run: |
           git add .
-          git commit -m "Update processed files and output"
-          git push https://your_username:${{ secrets.GITHUB_TOKEN }}@github.com/your_username/your_repo.git HEAD:main
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update processed files and output"
+            git push https://qingtingjjjjjjj:${{ secrets.GITHUB_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
