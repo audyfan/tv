@@ -33,7 +33,7 @@ def get_random_user_agent():
 # 检测URL是否可访问并记录响应时间
 def check_url(url, timeout=6):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'User-Agent': get_random_user_agent(),
     }
 
     elapsed_time = None
@@ -115,11 +115,15 @@ def save_processed_index(file_name, index):
 
 # 主程序
 def main():
-    merged_output_lines = read_txt_to_array('merged_output.txt')
+    # 文件路径
+    processed_file_path = 'assets/script/processed_index.txt'
+    merged_output_file_path = 'merged_output.txt'
+
+    merged_output_lines = read_txt_to_array(merged_output_file_path)
     total_lines = len(merged_output_lines)
     
     # 获取已处理的条目索引
-    processed_index = get_processed_index('processed_index.txt')
+    processed_index = get_processed_index(processed_file_path)
     
     # 每次处理100条
     batch_size = 100
@@ -140,15 +144,14 @@ def main():
                 new_merged_output_lines.append(newline)
 
     # 将合并后的文本写入文件
-    output_file = "test_merged_output.txt"
     try:
-        with open(output_file, 'a', encoding='utf-8') as f:
+        with open(merged_output_file_path, 'a', encoding='utf-8') as f:
             for line in new_merged_output_lines:
                 f.write(line + '\n')
-        print(f"合并后的文本已保存到文件: {output_file}")
+        print(f"合并后的文本已保存到文件: {merged_output_file_path}")
 
         # 更新已处理的条目索引
-        save_processed_index('processed_index.txt', end_index)
+        save_processed_index(processed_file_path, end_index)
 
     except Exception as e:
         print(f"保存文件时发生错误：{e}")
