@@ -618,15 +618,15 @@ all_lines =  ["更新时间,#genre#"] +[version]  +[about] +[daily_mtv] + ['\n']
              ["🏀SPORTS⚽️,#genre#"] + read_txt_to_array('专区/♪sports.txt') + ['\n'] + \
              ["🍹定制台☕️,#genre#"] + read_txt_to_array('专区/♪定制源.txt') + ['\n'] + \
              ["💓英语频道,#genre#"] + read_txt_to_array('专区/♪英语频道.txt') + ['\n'] + \
-             ["🌐央视频道,#genre#"] + sort_data(ys_dictionary,set(correct_name_data(corrections_name,ys_lines))) + ['\n'] + \
-             ["📡卫视频道,#genre#"] + sort_data(ws_dictionary,set(correct_name_data(corrections_name,ws_lines))) + ['\n'] + \
-             ["上海频道,#genre#"] + sort_data(sh_dictionary,set(correct_name_data(corrections_name,sh_lines))) + ['\n'] + \
-             ["体育频道,#genre#"] + sort_data(ty_dictionary,set(correct_name_data(corrections_name,ty_lines))) + ['\n'] + \
-             ["电影频道,#genre#"] + sort_data(dy_dictionary,set(correct_name_data(corrections_name,dy_lines))) + ['\n'] + \
-             ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,set(correct_name_data(corrections_name,dsj_lines))) + ['\n'] + \
-             ["明星,#genre#"] + sort_data(mx_dictionary,set(correct_name_data(corrections_name,mx_lines))) + ['\n'] + \
-             ["主题片,#genre#"] + sort_data(ztp_dictionary,set(correct_name_data(corrections_name,ztp_lines))) + ['\n'] + \
-             ["港澳台,#genre#"] + sort_data(gat_dictionary,set(correct_name_data(corrections_name,gat_lines))) + ['\n'] + \
+             ["🌐央视频道,#genre#"] + sort_data(ys_dictionary,correct_name_data(corrections_name,ys_lines)) + ['\n'] + \
+             ["📡卫视频道,#genre#"] + sort_data(ws_dictionary,correct_name_data(corrections_name,ws_lines)) + ['\n'] + \
+             ["上海频道,#genre#"] + sort_data(sh_dictionary,correct_name_data(corrections_name,sh_lines)) + ['\n'] + \
+             ["体育频道,#genre#"] + sort_data(ty_dictionary,correct_name_data(corrections_name,ty_lines)) + ['\n'] + \
+             ["电影频道,#genre#"] + sort_data(dy_dictionary,correct_name_data(corrections_name,dy_lines)) + ['\n'] + \
+             ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,correct_name_data(corrections_name,dsj_lines)) + ['\n'] + \
+             ["明星,#genre#"] + sort_data(mx_dictionary,correct_name_data(corrections_name,mx_lines)) + ['\n'] + \
+             ["主题片,#genre#"] + sort_data(ztp_dictionary,correct_name_data(corrections_name,ztp_lines)) + ['\n'] + \
+             ["港澳台,#genre#"] + sort_data(gat_dictionary,correct_name_data(corrections_name,gat_lines)) + ['\n'] + \
              ["国际台,#genre#"] + sort_data(gj_dictionary,set(correct_name_data(corrections_name,gj_lines))) + ['\n'] + \
              ["纪录片,#genre#"] + sort_data(jlp_dictionary,set(correct_name_data(corrections_name,jlp_lines)))+ ['\n'] + \
              ["动画片,#genre#"] + sort_data(dhp_dictionary,set(correct_name_data(corrections_name,dhp_lines)))+ ['\n'] + \
@@ -855,4 +855,3 @@ print(f"others_output.txt行数: {other_lines_hj} ")
 #备用1：http://tonkiang.us
 #备用2：https://www.zoomeye.hk,https://www.shodan.io,https://tv.cctv.com/live/
 #备用3：(BlackList检测对象)http,rtmp,p3p,rtp（rtsp，p2p）
-
