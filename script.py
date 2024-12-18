@@ -2,7 +2,6 @@ import time
 import urllib.request
 import re
 from urllib.error import URLError, HTTPError
-import cv2
 import requests
 import random
 import subprocess
@@ -168,4 +167,6 @@ def main():
 
 # 执行主程序
 if __name__ == "__main__":
-    main()
+   
+
+
