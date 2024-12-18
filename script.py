@@ -121,8 +121,8 @@ def main():
     # 获取已处理的条目索引
     processed_index = get_processed_index('processed_index.txt')
     
-    # 每次处理500条
-    batch_size = 500
+    # 每次处理100条
+    batch_size = 100
     start_index = processed_index
     end_index = min(start_index + batch_size, total_lines)
     
