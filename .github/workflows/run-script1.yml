@@ -1,47 +1,50 @@
-name: Daily Python Script Run
+name: Run Script and Push Changes
 
 on:
-  schedule:
-    # 每天美国东部时间22:30执行
-    - cron: '30 22 * * *'  # 使用 UTC 时间22:30等价于美国东部时间（UTC-4）
-  workflow_dispatch:
+  push:
+    branches:
+      - main  # 或者你自己指定的分支
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出仓库代码
-      - name: Checkout repository
+      # 拉取代码
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # 安装系统依赖 (解决 opencv-python 安装问题)
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-glx  # 安装 OpenCV 需要的系统依赖
-
-      # 设置 Python 环境
+      # 设置Python环境
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.8'  # 根据需要更改 Python 版本
+          python-version: '3.8'
 
       # 安装依赖
-      - name: Install Python dependencies
+      - name: Install dependencies
         run: |
-          pip install requests opencv-python  # 安装 requests 和 opencv-python
+          python -m pip install --upgrade pip
+          pip install requests opencv-python
 
-      # 运行 Python 脚本
+      # 运行Python脚本
       - name: Run Python script
         run: |
-          python script.py  # 根目录下的 Python 脚本
+          python script.py
 
-      # 提交更新后的文件并推送到 GitHub 仓库
-      - name: Commit and push changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: "Automated update of processed_index and merged_output"
-          author_name: "GitHub Actions"
-          author_email: "actions@github.com"
-          add: 'assets/script/processed_index.txt, merged_output.txt'
+      # 创建文件路径并保存输出
+      - name: Ensure output directory exists
+        run: |
+          mkdir -p assets/script
+          touch assets/script/processed_index.txt
+          touch assets/script/merged_output.txt
+
+      # 提交并推送更改
+      - name: Commit changes
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          git add .
+          git commit -m "Update processed files and output"
+          git push https://your_username:${{ secrets.GITHUB_TOKEN }}@github.com/your_username/your_repo.git HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
