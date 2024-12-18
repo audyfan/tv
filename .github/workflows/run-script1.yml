@@ -23,15 +23,10 @@ jobs:
         with:
           python-version: '3.8'
 
-      # 安装依赖（如果有 requirements.txt）
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt  # 如果有 requirements.txt 文件
-
       # 运行 Python 脚本
       - name: Run Python script
         run: |
-          python script.py  # 脚本文件位于仓库的根目录
+          python script.py  # 根目录下的 Python 脚本
 
       # 提交更新后的文件并推送到 GitHub 仓库
       - name: Commit and push changes
