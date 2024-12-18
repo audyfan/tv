@@ -574,12 +574,12 @@ beijing_time = utc_time + timedelta(hours=8)
 formatted_time = beijing_time.strftime("%Y%m%d %H:%M:%S")
 
 about_video1="https://d.kstore.dev/download/8880/%E5%85%AC%E5%91%8A.mp4"
-about_video2="https://cloud.7so.top/f/oVgcv/share_b9cf08edc7308979f7446af74e3b63ed.mp4"
+about_video2="https://d.kstore.dev/download/8880/share_b9cf08edc7308979f7446af74e3b63ed.mp4"
 version=formatted_time+","+about_video1
 about="关于本源(塔利班维护),"+about_video2
 # 瘦身版
 # 
-all_lines_simple =  ["更新时间,#genre#"] +[version] +[about] +[daily_mtv]+ ['\n'] +\
+all_lines_simple =  ["💐更新时间,#genre#"] +[version] +[about] +[daily_mtv]+ ['\n'] +\
              ["🅰️世界光影汇,#genre#"] + read_txt_to_array('专区/♪专享源①.txt') + ['\n'] + \
              ["🅱️影网急先锋,#genre#"] + read_txt_to_array('专区/♪专享源②.txt') + ['\n'] + \
              ["🌍央视荟萃,#genre#"] + read_txt_to_array('专区/♪优质央视.txt') + ['\n'] + \
@@ -604,7 +604,7 @@ all_lines_simple =  ["更新时间,#genre#"] +[version] +[about] +[daily_mtv]+ [
 # 合并所有对象中的行文本（去重，排序后拼接）
 # ["奥运频道,#genre#"] + sort_data(Olympics_2024_Paris_dictionary,set(correct_name_data(corrections_name,Olympics_2024_Paris_lines))) + ['\n'] + \
 # 
-all_lines =  ["更新时间,#genre#"] +[version]  +[about] +[daily_mtv] + ['\n'] +\
+all_lines =  ["💐更新时间,#genre#"] +[version]  +[about] +[daily_mtv] + ['\n'] +\
              ["🅰️世界光影汇,#genre#"] + read_txt_to_array('专区/♪专享源①.txt') + ['\n'] + \
              ["🅱️影网急先锋,#genre#"] + read_txt_to_array('专区/♪专享源②.txt') + ['\n'] + \
              ["🌍央视荟萃,#genre#"] + read_txt_to_array('专区/♪优质央视.txt') + ['\n'] + \
