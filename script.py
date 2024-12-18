@@ -7,6 +7,7 @@ import random
 import subprocess
 import sys
 import cv2
+import os
 
 # 安装缺少的依赖
 def install_dependencies():
@@ -128,7 +129,7 @@ def save_processed_index(file_name, index):
 
 # 主程序
 def main():
-    merged_output_lines = read_txt_to_array('merged_output.txt')
+    merged_output_lines = read_txt_to_array('assets/script/merged_output.txt')
     total_lines = len(merged_output_lines)
     
     # 获取已处理的条目索引
@@ -153,9 +154,13 @@ def main():
                 new_merged_output_lines.append(newline)
 
     # 将合并后的文本写入文件
-    output_file = "assets/script/test_merged_output.txt"
+    output_file = 'assets/script/test_merged_output.txt'
+
+    # 确保目录存在
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+
     try:
-        with open(output_file, 'a', encoding='utf-8') as f:
+        with open(output_file, 'w', encoding='utf-8') as f:  # 使用'w'模式覆盖写入
             for line in new_merged_output_lines:
                 f.write(line + '\n')
         print(f"合并后的文本已保存到文件: {output_file}")
