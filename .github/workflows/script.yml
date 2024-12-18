@@ -1,9 +1,12 @@
 name: Run Script and Push Changes
 
 on:
-  workflow_dispatch:  # 允许手动触发工作流
   schedule:
-    - cron: '30 22 * * *'  # 每天UTC时间22:30自动触发工作流
+    - cron: '30 22 * * *'  # 每天 UTC 时间 22:30 运行
+  push:
+    branches:
+      - main  # 或者你自己指定的分支
+  workflow_dispatch:  # 支持手动触发工作流
 
 jobs:
   run-script:
@@ -56,7 +59,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update processed files and output"
-            git push https://qingtingjjjjjjj:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
+            git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 自动生成的 token
