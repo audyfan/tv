@@ -49,6 +49,12 @@ jobs:
           git config --global user.name "qingtingjjjjjjj"
           git config --global user.email "quwuping11@gmail.com"
 
+      # 确保仓库已经初始化
+      - name: Ensure Git is initialized
+        run: |
+          git status
+          git remote set-url origin https://github.com/qingtingjjjjjjj/zhixueyiyi-tv.git
+
       # 检查文件更改并提交
       - name: Check for file changes and commit
         run: |
