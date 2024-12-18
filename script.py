@@ -130,11 +130,21 @@ def save_processed_index(file_name, index):
 
 # 主程序
 def main():
+    # 检查并创建文件夹路径
+    output_folder = 'assets/script'
+    os.makedirs(output_folder, exist_ok=True)
+
+    # 如果processed_index.txt文件不存在，则自动创建
+    processed_index_path = os.path.join(output_folder, 'processed_index.txt')
+    if not os.path.exists(processed_index_path):
+        with open(processed_index_path, 'w', encoding='utf-8') as file:
+            file.write("0\n")
+
     merged_output_lines = read_txt_to_array('assets/script/merged_output.txt')
     total_lines = len(merged_output_lines)
     
     # 获取已处理的条目索引
-    processed_index = get_processed_index('assets/script/processed_index.txt')
+    processed_index = get_processed_index(processed_index_path)
     
     # 每次处理100条
     batch_size = 100
@@ -156,7 +166,7 @@ def main():
 
     # 生成带日期时间的输出文件名
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    output_file = f'assets/script/test_merged_output_{current_time}.txt'
+    output_file = f'{output_folder}/test_merged_output_{current_time}.txt'
 
     # 确保目录存在
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -169,7 +179,7 @@ def main():
         print(f"合并后的文本已保存到文件: {output_file}")
 
         # 更新已处理的条目索引
-        save_processed_index('assets/script/processed_index.txt', end_index)
+        save_processed_index(processed_index_path, end_index)
 
         # 输出到环境文件，替代弃用的set-output命令
         with open(os.environ['GITHUB_ENV'], 'a') as env_file:
