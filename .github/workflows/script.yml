@@ -1,0 +1,62 @@
+name: Run Script and Push Changes
+
+on:
+  push:
+    branches:
+      - main  # 或者你自己指定的分支
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 拉取代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 设置Python环境
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests opencv-python
+
+      # 运行Python脚本
+      - name: Run Python script
+        run: |
+          python script.py
+
+      # 创建文件路径并保存输出
+      - name: Ensure output directory exists and create files
+        run: |
+          mkdir -p assets/script
+          # 创建 processed_index.txt 和 merged_output.txt 文件
+          touch assets/script/processed_index.txt
+          touch assets/script/merged_output.txt
+          # 查看文件是否被正确创建
+          ls -l assets/script/
+
+      # 配置git用户信息
+      - name: Configure git user
+        run: |
+          git config --global user.name "qingtingjjjjjjj"
+          git config --global user.email "quwuping11@gmail.com"
+
+      # 检查文件更改并提交
+      - name: Check for file changes and commit
+        run: |
+          git add assets/script/processed_index.txt assets/script/merged_output.txt
+          git status  # 确认文件已经被添加到暂存区
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update processed files and output"
+            git push https://qingtingjjjjjjj:${{ secrets.GITHUB_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
