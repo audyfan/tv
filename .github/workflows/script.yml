@@ -1,12 +1,10 @@
 name: Run Script and Push Changes
 
 on:
+  workflow_dispatch:  # 允许手动触发工作流
   schedule:
-    # 每天 22:30 UTC 时间执行
-    - cron: "30 22 * * *"
-  
-  workflow_dispatch:  # 手动触发工作流
-  
+    - cron: '30 22 * * *'  # 每天UTC时间22:30自动触发工作流
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -49,12 +47,6 @@ jobs:
           git config --global user.name "qingtingjjjjjjj"
           git config --global user.email "quwuping11@gmail.com"
 
-      # 确保仓库已经初始化
-      - name: Ensure Git is initialized
-        run: |
-          git status
-          git remote set-url origin https://github.com/qingtingjjjjjjj/zhixueyiyi-tv.git
-
       # 检查文件更改并提交
       - name: Check for file changes and commit
         run: |
@@ -64,7 +56,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update processed files and output"
-            git push https://qingtingjjjjjjj:${{ secrets.GITHUB_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
+            git push https://qingtingjjjjjjj:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/qingtingjjjjjjj/zhixueyiyi-tv.git HEAD:main
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
