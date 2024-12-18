@@ -2,8 +2,8 @@ name: Daily Python Script Run
 
 on:
   schedule:
-    # 每天美国东部时间22:30执行
-    - cron: '30 22 * * *'  # 使用 UTC 时间22:30等价于美国东部时间（UTC-4）
+    # 每天美国东部时间22:30执行 (UTC时间：02:30)
+    - cron: '30 2 * * *'  # 使用 UTC 时间22:30等价于美国东部时间（UTC-4）
 
 jobs:
   run-script:
@@ -30,10 +30,11 @@ jobs:
         run: |
           python assets/script/your_script.py  # 确保替换为实际的 Python 脚本文件路径
 
-      # 推送结果回仓库
-      - name: Push changes
+      # 提交更新后的文件并推送到 GitHub 仓库
+      - name: Commit and push changes
         uses: EndBug/add-and-commit@v7
         with:
           message: "Automated update of processed_index and merged_output"
           author_name: "GitHub Actions"
           author_email: "actions@github.com"
+          add: 'assets/script/processed_index.txt, merged_output.txt'  # 确保添加已更改的文件
