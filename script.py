@@ -9,6 +9,19 @@ import subprocess
 import sys
 import cv2
 
+# 检查并创建所需文件夹和文件
+def ensure_files():
+    folder_path = 'assets/script'
+    processed_index_path = os.path.join(folder_path, 'processed_index.txt')
+
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+
+    # 如果 processed_index.txt 文件不存在，创建它并初始化
+    if not os.path.isfile(processed_index_path):
+        with open(processed_index_path, 'w', encoding='utf-8') as f:
+            f.write('0\n')
+
 # 安装缺少的依赖
 def install_dependencies():
     try:
@@ -20,20 +33,8 @@ def install_dependencies():
 # 安装所需依赖
 install_dependencies()
 
-# 确保输出路径存在
-def ensure_output_paths_exist():
-    output_dir = 'assets/script'
-    os.makedirs(output_dir, exist_ok=True)
-    # 确保文件存在
-    processed_index_file = os.path.join(output_dir, 'processed_index.txt')
-    merged_output_file = os.path.join(output_dir, 'merged_output.txt')
-    
-    # 如果文件不存在，则创建空文件
-    if not os.path.exists(processed_index_file):
-        open(processed_index_file, 'w').close()
-    if not os.path.exists(merged_output_file):
-        open(merged_output_file, 'w').close()
-    print(f"确保文件夹和文件存在：{output_dir}, processed_index.txt, merged_output.txt")
+# 检查并创建文件
+ensure_files()
 
 # 读取txt文件到数组
 def read_txt_to_array(file_name):
@@ -144,7 +145,6 @@ def save_processed_index(file_name, index):
 
 # 主程序
 def main():
-    ensure_output_paths_exist()  # 确保输出文件夹和文件存在
     merged_output_lines = read_txt_to_array('assets/script/merged_output.txt')
     total_lines = len(merged_output_lines)
     
@@ -170,7 +170,7 @@ def main():
                 new_merged_output_lines.append(newline)
 
     # 将合并后的文本写入文件
-    output_file = "assets/script/test_merged_output.txt"
+    output_file = "assets/script/test_merged_output_" + time.strftime("%Y%m%d_%H%M%S") + ".txt"
     try:
         with open(output_file, 'a', encoding='utf-8') as f:
             for line in new_merged_output_lines:
