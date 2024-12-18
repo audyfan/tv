@@ -32,11 +32,14 @@ jobs:
           python script.py
 
       # 创建文件路径并保存输出
-      - name: Ensure output directory exists
+      - name: Ensure output directory exists and create files
         run: |
           mkdir -p assets/script
+          # 创建 processed_index.txt 和 merged_output.txt 文件
           touch assets/script/processed_index.txt
           touch assets/script/merged_output.txt
+          # 查看文件是否被正确创建
+          ls -l assets/script/
 
       # 配置git用户信息
       - name: Configure git user
@@ -44,10 +47,11 @@ jobs:
           git config --global user.name "qingtingjjjjjjj"
           git config --global user.email "quwuping11@gmail.com"
 
-      # 检查文件更改，并提交
+      # 检查文件更改并提交
       - name: Check for file changes and commit
         run: |
-          git add .
+          git add assets/script/processed_index.txt assets/script/merged_output.txt
+          git status  # 确认文件已经被添加到暂存区
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
