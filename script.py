@@ -5,6 +5,19 @@ from urllib.error import URLError, HTTPError
 import cv2
 import requests
 import random
+import subprocess
+import sys
+
+# 安装缺少的依赖
+def install_dependencies():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "opencv-python"])
+    except subprocess.CalledProcessError as e:
+        print(f"安装依赖失败: {e}")
+        sys.exit(1)
+
+# 安装所需依赖
+install_dependencies()
 
 # 读取txt文件到数组
 def read_txt_to_array(file_name):
