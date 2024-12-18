@@ -6,6 +6,7 @@ import requests
 import random
 import subprocess
 import sys
+import cv2
 
 # 安装缺少的依赖
 def install_dependencies():
@@ -131,7 +132,7 @@ def main():
     total_lines = len(merged_output_lines)
     
     # 获取已处理的条目索引
-    processed_index = get_processed_index('processed_index.txt')
+    processed_index = get_processed_index('assets/script/processed_index.txt')
     
     # 每次处理100条
     batch_size = 100
@@ -152,7 +153,7 @@ def main():
                 new_merged_output_lines.append(newline)
 
     # 将合并后的文本写入文件
-    output_file = "test_merged_output.txt"
+    output_file = "assets/script/test_merged_output.txt"
     try:
         with open(output_file, 'a', encoding='utf-8') as f:
             for line in new_merged_output_lines:
@@ -160,13 +161,11 @@ def main():
         print(f"合并后的文本已保存到文件: {output_file}")
 
         # 更新已处理的条目索引
-        save_processed_index('processed_index.txt', end_index)
+        save_processed_index('assets/script/processed_index.txt', end_index)
 
     except Exception as e:
         print(f"保存文件时发生错误：{e}")
 
 # 执行主程序
 if __name__ == "__main__":
-   
-
-
+    main()
