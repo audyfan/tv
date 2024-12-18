@@ -574,7 +574,7 @@ beijing_time = utc_time + timedelta(hours=8)
 formatted_time = beijing_time.strftime("%Y%m%d %H:%M:%S")
 
 about_video1="https://d.kstore.dev/download/8880/%E5%85%AC%E5%91%8A.mp4"
-about_video2="https://gitlab.com/p2v5/wangtv/-/raw/main/about1080p.mp4"
+about_video2="https://cloud.7so.top/f/oVgcv/share_b9cf08edc7308979f7446af74e3b63ed.mp4"
 version=formatted_time+","+about_video1
 about="关于本源(塔利班维护),"+about_video2
 # 瘦身版
