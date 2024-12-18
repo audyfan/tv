@@ -1,9 +1,9 @@
 name: Run Script and Push Changes
 
 on:
-  push:
-    branches:
-      - main  # 或者你自己指定的分支
+  schedule:
+    # 每天 22:30 UTC 时间执行
+    - cron: "30 22 * * *"
 
 jobs:
   run-script:
