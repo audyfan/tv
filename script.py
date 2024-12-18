@@ -8,6 +8,7 @@ import subprocess
 import sys
 import cv2
 import os
+from datetime import datetime
 
 # 安装缺少的依赖
 def install_dependencies():
@@ -153,13 +154,15 @@ def main():
                 newline = f"{line},{width}x{height},{span_time}"
                 new_merged_output_lines.append(newline)
 
-    # 将合并后的文本写入文件
-    output_file = 'assets/script/test_merged_output.txt'
+    # 生成带日期时间的输出文件名
+    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_file = f'assets/script/test_merged_output_{current_time}.txt'
 
     # 确保目录存在
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     try:
+        # 写入新的内容
         with open(output_file, 'w', encoding='utf-8') as f:  # 使用'w'模式覆盖写入
             for line in new_merged_output_lines:
                 f.write(line + '\n')
@@ -167,6 +170,10 @@ def main():
 
         # 更新已处理的条目索引
         save_processed_index('assets/script/processed_index.txt', end_index)
+
+        # 输出到环境文件，替代弃用的set-output命令
+        with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+            env_file.write(f'OUTPUT_FILE={output_file}\n')
 
     except Exception as e:
         print(f"保存文件时发生错误：{e}")
