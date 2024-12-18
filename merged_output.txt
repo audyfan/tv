@@ -67,8 +67,8 @@ CHC家庭影院,http://218.76.32.193:9901/tsfile/live/1018_1.m3u8
 CHC家庭影院,http://eastscreen.tv/ooooo.php?id=chcjt
 CHC家庭影院,http://annaxi.lw-home.com:11111/udp/239.253.254.152:8000
 
-PopC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
-PopC,http://free.xiptv.x10.bz/kudou.php?id=38
+POPC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
+POPC,http://free.xiptv.x10.bz/kudou.php?id=38
 Now爆谷,http://aktv.top/AKTV/live/aktv2/null/AKTV.m3u8
 Now星影,http://205.185.123.236:8899/1/now/stream.m3u8
 緯来电影,http://108.181.20.215:44779
