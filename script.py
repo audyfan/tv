@@ -1,3 +1,4 @@
+import os
 import time
 import urllib.request
 import re
@@ -7,8 +8,6 @@ import random
 import subprocess
 import sys
 import cv2
-import os
-from datetime import datetime
 
 # 安装缺少的依赖
 def install_dependencies():
@@ -20,6 +19,21 @@ def install_dependencies():
 
 # 安装所需依赖
 install_dependencies()
+
+# 确保输出路径存在
+def ensure_output_paths_exist():
+    output_dir = 'assets/script'
+    os.makedirs(output_dir, exist_ok=True)
+    # 确保文件存在
+    processed_index_file = os.path.join(output_dir, 'processed_index.txt')
+    merged_output_file = os.path.join(output_dir, 'merged_output.txt')
+    
+    # 如果文件不存在，则创建空文件
+    if not os.path.exists(processed_index_file):
+        open(processed_index_file, 'w').close()
+    if not os.path.exists(merged_output_file):
+        open(merged_output_file, 'w').close()
+    print(f"确保文件夹和文件存在：{output_dir}, processed_index.txt, merged_output.txt")
 
 # 读取txt文件到数组
 def read_txt_to_array(file_name):
@@ -130,21 +144,12 @@ def save_processed_index(file_name, index):
 
 # 主程序
 def main():
-    # 检查并创建文件夹路径
-    output_folder = 'assets/script'
-    os.makedirs(output_folder, exist_ok=True)
-
-    # 如果processed_index.txt文件不存在，则自动创建
-    processed_index_path = os.path.join(output_folder, 'processed_index.txt')
-    if not os.path.exists(processed_index_path):
-        with open(processed_index_path, 'w', encoding='utf-8') as file:
-            file.write("0\n")
-
+    ensure_output_paths_exist()  # 确保输出文件夹和文件存在
     merged_output_lines = read_txt_to_array('assets/script/merged_output.txt')
     total_lines = len(merged_output_lines)
     
     # 获取已处理的条目索引
-    processed_index = get_processed_index(processed_index_path)
+    processed_index = get_processed_index('assets/script/processed_index.txt')
     
     # 每次处理100条
     batch_size = 100
@@ -164,26 +169,16 @@ def main():
                 newline = f"{line},{width}x{height},{span_time}"
                 new_merged_output_lines.append(newline)
 
-    # 生成带日期时间的输出文件名
-    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    output_file = f'{output_folder}/test_merged_output_{current_time}.txt'
-
-    # 确保目录存在
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
-
+    # 将合并后的文本写入文件
+    output_file = "assets/script/test_merged_output.txt"
     try:
-        # 写入新的内容
-        with open(output_file, 'w', encoding='utf-8') as f:  # 使用'w'模式覆盖写入
+        with open(output_file, 'a', encoding='utf-8') as f:
             for line in new_merged_output_lines:
                 f.write(line + '\n')
         print(f"合并后的文本已保存到文件: {output_file}")
 
         # 更新已处理的条目索引
-        save_processed_index(processed_index_path, end_index)
-
-        # 输出到环境文件，替代弃用的set-output命令
-        with open(os.environ['GITHUB_ENV'], 'a') as env_file:
-            env_file.write(f'OUTPUT_FILE={output_file}\n')
+        save_processed_index('assets/script/processed_index.txt', end_index)
 
     except Exception as e:
         print(f"保存文件时发生错误：{e}")
