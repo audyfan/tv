@@ -1,0 +1,31 @@
+name: Live Source Checker
+
+on:
+  schedule:
+    - cron: "0 21 * * *"  # 每天美国时间 21:00 自动运行
+  workflow_dispatch:
+
+jobs:
+  live-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: 运行检测脚本
+        run: |
+          python optimized_live_checker.py
+
+      - name: 推送结果
+        run: |
+          git config --global user.name "your-github-username"
+          git config --global user.email "your-email@example.com"
+          git add .
+          git commit -m "更新检测结果 - $(date)"
+          git push
