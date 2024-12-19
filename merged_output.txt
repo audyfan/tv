@@ -162,6 +162,16 @@ iHot欧美影院,http://[2409:8087:5e08:24::11]:6610/000000001000/71852035017695
 
 
 🅱️影网急先锋,#genre#
+电影1,http://zby.xjqxz.top/live5/live.m3u8
+电影2,http://zby.xjqxz.top/live7/live.m3u8
+电影3,http://zby.xjqxz.top/live13/live.m3u8
+电影3,http://zby.xjqxz.top/live12/live.m3u8
+HK电影,http://zby.xjqxz.top/hkdy1/live.m3u8
+HK电影2,http://zby.xjqxz.top/hkdy2/live.m3u8
+国产电影,http://zby.xjqxz.top/gcwx2/live.m3u8
+国产电影,http://120.77.28.4:8648/huya.php?id=11352973
+好莱坞电影,http://zby.xjqxz.top/hlwdy1/live.m3u8
+
 邵氏影院,http://120.77.28.4:8648/douyu.php?id=4246519
 凌儿影院,http://120.77.28.4:8648/douyu.php?id=1377142
 漫威影院,http://120.77.28.4:8648/douyu.php?id=6140589
