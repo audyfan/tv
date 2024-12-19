@@ -1780,9 +1780,9 @@ Now爆谷,http://aktv.top/AKTV/live/aktv2/null/AKTV.m3u8
 八大综艺,https://4gtv.pendy.us.kg/4gtv.php?id=4gtv-4gtv039
 
 寰宇新闻,http://aktv.top/AKTV/live/aktv/null-9/AKTV.m3u8
-寰宇新闻,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV02.m3u8
+寰宇新闻,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV02.m3u8
 寰宇新闻,http://211.72.65.236:8547/.m3u8
-寰宇新聞台灣台,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV41.m3u8
+寰宇新聞台灣台,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV41.m3u8
 寰宇新聞台灣台,http://209.141.58.162:4994/proxy?url=http%3A//209.141.58.162%3A5050/litv/litv-longturn15
 寰宇财经台,http://209.141.58.162:4994/proxy?url=http%3A//209.141.58.162%3A5050/litv/litv-longturn23
 
@@ -1807,7 +1807,7 @@ Now爆谷,http://aktv.top/AKTV/live/aktv2/null/AKTV.m3u8
 东森综合,p3p://173.208.176.178:31809/5fe8c5570001412994347b4506da6ebb
 东森综合,http://211.72.65.236:8524/.m3u8
 东森综合,http://tianhewan.top/ZIPP.php?url=http://211.72.65.236:8524/.m3u8
-东森财经,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/TV03.m3u8
+东森财经,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/refs/heads/master/TV03.m3u8
 
 东森电影,http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MBDB9268852192688521&ct=19254&tsum=7514b50ebc2e4b06f2e402578d0ac996
 东森电影,http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MDED1943740419437404&ct=19225&tsum=120834a4218c4b5c3bb19efb8116f859
@@ -1872,7 +1872,7 @@ TVBS,http://209.141.58.162:4994/proxy?url=http%3A//209.141.58.162%3A5050/litv/4g
 华视新闻,http://211.72.65.236:8503/.m3u8
 华语电视2,http://38.64.72.148:80/hls/modn/list/4002/chunklist0.m3u8
 华语电视3,http://38.64.72.148:80/hls/modn/list/4003/chunklist0.m3u8
-華視戲劇,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV12.m3u8
+華視戲劇,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV12.m3u8
 
 大爱二台,https://pulltv2.wanfudaluye.com/live/tv2.m3u8
 TiTV,http://37.27.111.214:8080/live/2/hls.m3u8
@@ -1938,6 +1938,18 @@ Ginx_TV,https://litv.zapi.us.kg/?id=4gtv-4gtv053
 
 
 🏠电视剧🔁,#genre#
+电视剧场一,http://cfss.cc/cdn/hy/29465862.flv
+电视剧场二,http://cfss.cc/cdn/hy/11336591.flv
+电视剧场三,http://cfss.cc/cdn/hy/21059563.flv
+电视剧场四,http://cfss.cc/cdn/hy/26355783.flv
+电视剧场五,http://cfss.cc/cdn/hy/11352912.flv
+电视剧场六,http://cfss.cc/cdn/hy/11352936.flv
+电视剧场七,http://cfss.cc/cdn/hy/21059630.flv
+电视剧场八,http://cfss.cc/cdn/hy/26355775.flv
+电视剧场九,http://cfss.cc/cdn/hy/21059594.flv
+电视剧场十,http://cfss.cc/cdn/hy/11336592.flv
+电视剧场十一,http://cfss.cc/cdn/hy/11602088.flv
+
 🎞️庆余年,http://111.67.193.2:35455/huya/11352960
 🎞️雪中悍刀行,http://120.77.28.4:8648/yy.php?id=1382660835
 🎞️雪中悍刀行,http://159.75.85.63:35455/yy/1382660835
@@ -2064,8 +2076,8 @@ BTV纪实,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225729/index.m3
 
 MTV欣赏,http://37.27.111.214:8080/live/25/hls.m3u8
 AMC音乐,https://AMChls.wns.live/hls/stream.m3u8
-(JP)TBS NEWS,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV45.m3u8
-(Korea)KBS News,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV61.m3u8
+(JP)TBS NEWS,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV45.m3u8
+(Korea)KBS News,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV61.m3u8
 
 
 
@@ -2136,8 +2148,8 @@ Nick动画2,http://37.27.111.214:8080/live/22/hls.m3u8
 蜡笔小新,http://120.77.28.4:8648/huya.php?id=11352970
 iHOT爱动漫,http://[2409:8087:5e08:24::11]:6610/000000001000/2000000004000000059/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000059&IASHttpSessionId=OTT19019320240419154124000281
 24H国漫热播,https://lunbo.freetv.top/yy/1353937086
-小猪佩奇,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
-YOYO TV,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV63.m3u8
+小猪佩奇,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
+YOYO TV,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV63.m3u8
 YOYO TV,https://ythls.armelin.one/channel/UCiWRSesvSYmY7YOyz0tv_zQ.m3u8
 
 
@@ -2279,16 +2291,16 @@ fox sports 2,https://stream1.freetv.fun/fox-sports-2-5.ctv
 BBC News,https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist.m3u8
 BBC News,http://125.227.210.55:8165/VideoInput/play.ts
 美国之音,https://litv.zapi.us.kg/?id=litv-ftv03
-TaiwanPlus,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV78.m3u8
-ABC News,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV24.m3u8
+TaiwanPlus,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV78.m3u8
+ABC News,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV24.m3u8
 DW News,http://aktv.top/AKTV/live/aktv3/dw/AKTV.m3u8
-DW News,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV08.m3u8
+DW News,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV08.m3u8
 DW News,http://37.27.111.214:8080/live/46/hls.m3u8
-GB News,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV33.m3u8
+GB News,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV33.m3u8
 FRANCE24 English,http://aktv.top/AKTV/live/aktv3/france24/AKTV.m3u8
-FRANCE24 English,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV38.m3u8
-NBC News,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV39.m3u8
-Al Jazeera English,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV59.m3u8
+FRANCE24 English,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV38.m3u8
+NBC News,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV39.m3u8
+Al Jazeera English,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV59.m3u8
 NHK World-Japan,http://aktv.top/AKTV/live/aktv3/nhkworldjapan/AKTV.m3u8
 ABC News Australia,https://stream1.freetv.fun/abc-news-australia-1.m3u8
 ABC News Australia,https://stream1.freetv.fun/abc-news-australia-2.ctv
@@ -16206,7 +16218,7 @@ TVBS欢乐,http://198.16.100.90:8278/tvbshuanle_twn/playlist.m3u8?tid=MA9A411140
 三立新闻,http://ali.hlspull.yximgs.com/live/7771ddsshabibscbmlsanlixw8886755464889eqoklhdjhflhfsdfagksh-9999547666-8845f-52660dfb346liLecbcdncnpfhgkdfghdlivcctv9HDopdeafaiiiisgdbkasdfsbiiilllll1llllllllllllllllllilldfsldhfsfjlfjfdsklf4dlkfdfgksfhskfsfddlafakfhajdfsaad.flv
 三立新闻,p3p://108.181.32.169:18612/64251e23000bcd04ea573d7c0f0a002e
 三立新闻,p3p://108.181.32.169:18118/64251e23000bcd04ea573d7c0f0a002e
-三立新闻,https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
+三立新闻,https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV32.m3u8
 三立新闻,http://wo.xiang.lai.ge.bi.jiao.chang.de.yu.ming.wan.wan.jie.xi.bu.zhi.dao.ke.bu.ke.xing.hk3.345888.xyz.cdn.cloudflare.net/gt/aktv.php?variable=null-14
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-5.ctv
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-4.m3u8
