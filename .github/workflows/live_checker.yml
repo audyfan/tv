@@ -24,8 +24,8 @@ jobs:
 
       - name: 推送结果
         run: |
-          git config --global user.name "your-github-username"
-          git config --global user.email "your-email@example.com"
+          git config --global user.name "qingtingjjjjjjj"
+          git config --global user.email "quwuping11@gmail.com"
           git add .
           git commit -m "更新检测结果 - $(date)"
           git push
