@@ -12,3 +12,14 @@
 新动漫
 蜡笔小新
 宝宝动画
+动画片,#genre#
+哈哈炫动,http://119.62.80.35:9901/tsfile/live/1007_1.m3u8
+金鹰卡通,http://111.8.242.126:9999/tsfile/live/1031_1.m3u8
+炫动卡通,http://wouu.net:9977/udp/239.93.0.173:5140
+海绵宝宝,http://cdn.jdshipin.com:8880/huya.php?id=11352919
+名侦探柯南,http://cdn.jdshipin.com:8880/huya.php?id=30080236
+动漫秀场,https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-4.m3u8
+哆啦A梦「动漫」,https://live.iill.top/huya/11601963
+中华小当家,https://live.iill.top/huya/11342413
+蜡笔小新,http://cdn.jdshipin.com:8880/huya.php?id=11352970
+宝宝动画,http://wouu.net:9977/udp/239.93.0.147:5140
