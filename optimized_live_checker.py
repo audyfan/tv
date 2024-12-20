@@ -1,12 +1,17 @@
 import os
 import time
 from datetime import datetime
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 配置文件路径
 BASE_DIR = "./live_results"  # 存放检测结果的文件夹
 MERGED_OUTPUT_FILE = "./live_white_list.txt"  # 白名单文件
 BLACKLIST_FILE = "./live_black_list.txt"  # 黑名单文件
 SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
+THREAD_POOL_SIZE = 10  # 线程池大小
+DETECTION_ROUNDS = 3  # 每个直播源检测次数
+DETECTION_TIMEOUT = 5  # 每次检测的超时时间（秒）
 
 def create_folders_and_files():
     """
@@ -48,15 +53,33 @@ def parse_sources(file_path):
                         print(f"添加直播源到分类 {current_category}: {source_name} -> {source_url}")
     return categories
 
+def check_single_source(source_url):
+    """
+    检测单个直播源是否存活，发送 HTTP 请求检测。
+    """
+    try:
+        response = requests.get(source_url, timeout=DETECTION_TIMEOUT)
+        if response.status_code == 200:
+            print(f"检测成功: {source_url} -> 存活")
+            return True
+        else:
+            print(f"检测失败: {source_url} -> 状态码 {response.status_code}")
+            return False
+    except requests.RequestException as e:
+        print(f"检测失败: {source_url} -> 异常 {e}")
+        return False
+
 def check_live_source(source_url):
     """
-    检测单个直播源是否存活，模拟逻辑。
+    对单个直播源多次检测，提高准确性。
     """
-    print(f"检测直播源：{source_url}")
-    time.sleep(0.1)  # 模拟检测延迟
-    if hash(source_url) % 7 == 0:  # 模拟随机失效
-        return False
-    return hash(source_url) % 2 == 0
+    results = []
+    for i in range(DETECTION_ROUNDS):
+        result = check_single_source(source_url)
+        results.append(result)
+        time.sleep(0.2)  # 增加短暂延迟
+    # 统计结果：至少 2 次存活判定为存活
+    return results.count(True) >= 2
 
 def save_results(category, results):
     """
@@ -65,9 +88,11 @@ def save_results(category, results):
     🅰世界光影汇,#genre#
     📹直播中国,https://example.com/live1.m3u8
     """
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     # 保存白名单
     with open(MERGED_OUTPUT_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category}\n")
+        f.write(f"{category} (检测时间: {timestamp})\n")
         for source_name, (source_url, status) in results.items():
             if status:  # 存活
                 f.write(f"{source_name},{source_url}\n")
@@ -75,7 +100,7 @@ def save_results(category, results):
 
     # 保存黑名单
     with open(BLACKLIST_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category}\n")
+        f.write(f"{category} (检测时间: {timestamp})\n")
         for source_name, (source_url, status) in results.items():
             if not status:  # 失效
                 f.write(f"{source_name},{source_url}\n")
@@ -83,16 +108,22 @@ def save_results(category, results):
 
 def check_category(category, sources):
     """
-    检测指定分类内的所有直播源。
+    检测指定分类内的所有直播源，使用多线程加速。
     """
     results = {}
-    for source_name, source_url in sources:
-        try:
-            is_alive = check_live_source(source_url)
-            results[source_name] = (source_url, is_alive)
-        except Exception as e:
-            print(f"检测失败：{source_name} -> {e}")
-            results[source_name] = (source_url, False)
+    with ThreadPoolExecutor(max_workers=THREAD_POOL_SIZE) as executor:
+        future_to_source = {
+            executor.submit(check_live_source, source_url): (source_name, source_url)
+            for source_name, source_url in sources
+        }
+        for future in as_completed(future_to_source):
+            source_name, source_url = future_to_source[future]
+            try:
+                is_alive = future.result()
+                results[source_name] = (source_url, is_alive)
+            except Exception as e:
+                print(f"检测失败：{source_name} -> {e}")
+                results[source_name] = (source_url, False)
     save_results(category, results)
 
 def main():
