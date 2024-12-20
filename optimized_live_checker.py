@@ -7,6 +7,7 @@ BASE_DIR = "./live_results"  # 存放检测结果的文件夹
 MERGED_OUTPUT_FILE = "./live_white_list.txt"  # 白名单文件
 BLACKLIST_FILE = "./live_black_list.txt"  # 黑名单文件
 SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
+DETECTION_ROUNDS = 3  # 每个直播源检测次数
 
 def create_folders_and_files():
     """
@@ -50,13 +51,19 @@ def parse_sources(file_path):
 
 def check_live_source(source_url):
     """
-    检测单个直播源是否存活，模拟逻辑。
+    检测单个直播源是否存活，返回多个检测结果作为参考。
     """
     print(f"检测直播源：{source_url}")
-    time.sleep(0.1)  # 模拟检测延迟
-    if hash(source_url) % 7 == 0:  # 模拟随机失效
-        return False
-    return hash(source_url) % 2 == 0
+    results = []
+
+    for i in range(DETECTION_ROUNDS):
+        time.sleep(0.5)  # 模拟检测延迟，增加稳定性
+        is_alive = hash(source_url + str(i)) % 3 != 0  # 模拟检测逻辑
+        results.append(is_alive)
+        print(f"第 {i+1} 次检测结果: {'存活' if is_alive else '失效'}")
+
+    # 统计结果：至少 2 次存活判定为存活
+    return results.count(True) >= 2
 
 def save_results(category, results):
     """
@@ -65,9 +72,11 @@ def save_results(category, results):
     🅰世界光影汇,#genre#
     📹直播中国,https://example.com/live1.m3u8
     """
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     # 保存白名单
     with open(MERGED_OUTPUT_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category}\n")
+        f.write(f"{category} (检测时间: {timestamp})\n")
         for source_name, (source_url, status) in results.items():
             if status:  # 存活
                 f.write(f"{source_name},{source_url}\n")
@@ -75,7 +84,7 @@ def save_results(category, results):
 
     # 保存黑名单
     with open(BLACKLIST_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category}\n")
+        f.write(f"{category} (检测时间: {timestamp})\n")
         for source_name, (source_url, status) in results.items():
             if not status:  # 失效
                 f.write(f"{source_name},{source_url}\n")
