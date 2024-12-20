@@ -9,7 +9,8 @@ BASE_DIR = "./live_results"  # 存放检测结果的文件夹
 MERGED_OUTPUT_FILE = "./live_white_list.txt"  # 白名单文件
 BLACKLIST_FILE = "./live_black_list.txt"  # 黑名单文件
 SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
-THREAD_POOL_SIZE = 10  # 线程池大小
+
+THREAD_POOL_SIZE = 20  # 线程池大小
 DETECTION_TIMEOUT = 5  # 每次检测的超时时间（秒）
 
 def create_folders_and_files():
@@ -25,8 +26,7 @@ def create_folders_and_files():
 
 def parse_sources(file_path):
     """
-    按分类解析直播源文件，支持新的格式：
-    格式示例：
+    按分类解析直播源文件，支持格式：
     🅰世界光影汇,#genre#
     📹直播中国,https://example.com/live1.m3u8
     """
@@ -39,7 +39,7 @@ def parse_sources(file_path):
             if not line:
                 continue  # 跳过空行
             if line.endswith("#genre#"):  # 判断是否是分类标题
-                current_category = line.strip()  # 直接保留分类标题完整内容
+                current_category = line.strip()  # 保留分类标题完整内容
                 categories[current_category] = []
                 print(f"发现分类: {current_category}")
             elif current_category:
@@ -124,10 +124,12 @@ def main():
         print("没有分类可检测。")
         return
 
-    # 每天检测一个分类
+    # 根据当天日期选择要检测的分类
     today_index = datetime.now().timetuple().tm_yday % len(category_list)
     today_category = category_list[today_index]
     print(f"今天检测分类：{today_category}")
+
+    # 检测该分类内的所有直播源
     check_category(today_category, categories[today_category])
 
 if __name__ == "__main__":
