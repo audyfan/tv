@@ -5,6 +5,7 @@ import time
 from datetime import datetime
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import logging
 
 # 安装必要的依赖
 def install_dependencies():
@@ -32,6 +33,9 @@ SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
 THREAD_POOL_SIZE = 10  # 线程池大小
 DETECTION_TIMEOUT = 5  # 每次检测的超时时间（秒）
 
+# 配置日志
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def create_folders_and_files():
     """
     自动创建必要的文件夹和文件。
@@ -41,7 +45,7 @@ def create_folders_and_files():
         if not os.path.exists(file):
             with open(file, "w", encoding="utf-8") as f:
                 pass
-    print("文件夹和文件已创建或确认存在。")
+    logging.info("文件夹和文件已创建或确认存在。")
 
 def parse_sources(file_path):
     """
@@ -61,7 +65,7 @@ def parse_sources(file_path):
             if line.endswith("#genre#"):  # 判断是否是分类标题
                 current_category = line.strip()  # 直接保留分类标题完整内容
                 categories[current_category] = []
-                print(f"发现分类: {current_category}")
+                logging.info(f"发现分类: {current_category}")
             elif current_category:
                 # 解析直播源名称和 URL
                 parts = line.split(",", 1)
@@ -69,7 +73,7 @@ def parse_sources(file_path):
                     source_name, source_url = parts[0].strip(), parts[1].strip()
                     if source_url:  # 跳过空的 URL
                         categories[current_category].append((source_name, source_url))
-                        print(f"添加直播源到分类 {current_category}: {source_name} -> {source_url}")
+                        logging.info(f"添加直播源到分类 {current_category}: {source_name} -> {source_url}")
     return categories
 
 def check_live_source(source_url):
@@ -79,13 +83,13 @@ def check_live_source(source_url):
     try:
         response = requests.get(source_url, timeout=DETECTION_TIMEOUT)
         if response.status_code == 200:
-            print(f"检测成功: {source_url} -> 存活")
+            logging.info(f"检测成功: {source_url} -> 存活")
             return True
         else:
-            print(f"检测失败: {source_url} -> 状态码 {response.status_code}")
+            logging.warning(f"检测失败: {source_url} -> 状态码 {response.status_code}")
             return False
     except requests.RequestException as e:
-        print(f"检测失败: {source_url} -> 异常 {e}")
+        logging.error(f"检测失败: {source_url} -> 异常 {e}")
         return False
 
 def save_results(category, results):
@@ -103,7 +107,7 @@ def save_results(category, results):
         for source_name, (source_url, status) in results.items():
             if status:  # 存活
                 f.write(f"{source_name},{source_url}\n")
-    print(f"存活直播源已追加到 {MERGED_OUTPUT_FILE}。")
+    logging.info(f"存活直播源已追加到 {MERGED_OUTPUT_FILE}。")
 
     # 保存黑名单
     with open(BLACKLIST_FILE, "a", encoding="utf-8") as f:
@@ -111,7 +115,7 @@ def save_results(category, results):
         for source_name, (source_url, status) in results.items():
             if not status:  # 失效
                 f.write(f"{source_name},{source_url}\n")
-    print(f"失效直播源已追加到 {BLACKLIST_FILE}。")
+    logging.info(f"失效直播源已追加到 {BLACKLIST_FILE}。")
 
 def check_category(category, sources):
     """
@@ -129,7 +133,7 @@ def check_category(category, sources):
                 is_alive = future.result()
                 results[source_name] = (source_url, is_alive)
             except Exception as e:
-                print(f"检测失败：{source_name} -> {e}")
+                logging.error(f"检测失败：{source_name} -> {e}")
                 results[source_name] = (source_url, False)
     save_results(category, results)
 
@@ -141,13 +145,13 @@ def main():
     categories = parse_sources(SOURCE_FILE)
     category_list = list(categories.keys())
     if not category_list:
-        print("没有分类可检测。")
+        logging.info("没有分类可检测。")
         return
 
     # 每天检测一个分类
     today_index = datetime.now().timetuple().tm_yday % len(category_list)
     today_category = category_list[today_index]
-    print(f"今天检测分类：{today_category}")
+    logging.info(f"今天检测分类：{today_category}")
     check_category(today_category, categories[today_category])
 
 if __name__ == "__main__":
