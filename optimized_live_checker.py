@@ -1,13 +1,16 @@
 import os
 import time
 from datetime import datetime
+import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 配置文件路径
 BASE_DIR = "./live_results"  # 存放检测结果的文件夹
 MERGED_OUTPUT_FILE = "./live_white_list.txt"  # 白名单文件
 BLACKLIST_FILE = "./live_black_list.txt"  # 黑名单文件
 SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
-DETECTION_ROUNDS = 3  # 每个直播源检测次数
+THREAD_POOL_SIZE = 10  # 线程池大小
+DETECTION_TIMEOUT = 5  # 每次检测的超时时间（秒）
 
 def create_folders_and_files():
     """
@@ -51,19 +54,19 @@ def parse_sources(file_path):
 
 def check_live_source(source_url):
     """
-    检测单个直播源是否存活，返回多个检测结果作为参考。
+    检测单个直播源是否存活，发送 HTTP 请求检测一次。
     """
-    print(f"检测直播源：{source_url}")
-    results = []
-
-    for i in range(DETECTION_ROUNDS):
-        time.sleep(0.5)  # 模拟检测延迟，增加稳定性
-        is_alive = hash(source_url + str(i)) % 3 != 0  # 模拟检测逻辑
-        results.append(is_alive)
-        print(f"第 {i+1} 次检测结果: {'存活' if is_alive else '失效'}")
-
-    # 统计结果：至少 2 次存活判定为存活
-    return results.count(True) >= 2
+    try:
+        response = requests.get(source_url, timeout=DETECTION_TIMEOUT)
+        if response.status_code == 200:
+            print(f"检测成功: {source_url} -> 存活")
+            return True
+        else:
+            print(f"检测失败: {source_url} -> 状态码 {response.status_code}")
+            return False
+    except requests.RequestException as e:
+        print(f"检测失败: {source_url} -> 异常 {e}")
+        return False
 
 def save_results(category, results):
     """
@@ -92,16 +95,22 @@ def save_results(category, results):
 
 def check_category(category, sources):
     """
-    检测指定分类内的所有直播源。
+    检测指定分类内的所有直播源，使用多线程加速。
     """
     results = {}
-    for source_name, source_url in sources:
-        try:
-            is_alive = check_live_source(source_url)
-            results[source_name] = (source_url, is_alive)
-        except Exception as e:
-            print(f"检测失败：{source_name} -> {e}")
-            results[source_name] = (source_url, False)
+    with ThreadPoolExecutor(max_workers=THREAD_POOL_SIZE) as executor:
+        future_to_source = {
+            executor.submit(check_live_source, source_url): (source_name, source_url)
+            for source_name, source_url in sources
+        }
+        for future in as_completed(future_to_source):
+            source_name, source_url = future_to_source[future]
+            try:
+                is_alive = future.result()
+                results[source_name] = (source_url, is_alive)
+            except Exception as e:
+                print(f"检测失败：{source_name} -> {e}")
+                results[source_name] = (source_url, False)
     save_results(category, results)
 
 def main():
