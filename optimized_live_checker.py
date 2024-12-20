@@ -1,40 +1,12 @@
-import subprocess
-import sys
 import os
 import time
 from datetime import datetime
-import requests
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import logging
-
-# 安装必要的依赖
-def install_dependencies():
-    """安装必要的依赖"""
-    try:
-        import aiohttp  # 检查是否安装了aiohttp
-    except ImportError:
-        print("检测到缺少依赖库 aiohttp，正在安装 ...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "aiohttp"])
-
-    try:
-        import requests  # 检查是否安装了requests
-    except ImportError:
-        print("检测到缺少依赖库 requests，正在安装 ...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
-
-# 调用安装依赖的函数
-install_dependencies()
 
 # 配置文件路径
 BASE_DIR = "./live_results"  # 存放检测结果的文件夹
 MERGED_OUTPUT_FILE = "./live_white_list.txt"  # 白名单文件
 BLACKLIST_FILE = "./live_black_list.txt"  # 黑名单文件
 SOURCE_FILE = "./merged_output.txt"  # 根目录的直播源文件
-THREAD_POOL_SIZE = 10  # 线程池大小
-DETECTION_TIMEOUT = 5  # 每次检测的超时时间（秒）
-
-# 配置日志
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def create_folders_and_files():
     """
@@ -45,7 +17,7 @@ def create_folders_and_files():
         if not os.path.exists(file):
             with open(file, "w", encoding="utf-8") as f:
                 pass
-    logging.info("文件夹和文件已创建或确认存在。")
+    print("文件夹和文件已创建或确认存在。")
 
 def parse_sources(file_path):
     """
@@ -65,7 +37,7 @@ def parse_sources(file_path):
             if line.endswith("#genre#"):  # 判断是否是分类标题
                 current_category = line.strip()  # 直接保留分类标题完整内容
                 categories[current_category] = []
-                logging.info(f"发现分类: {current_category}")
+                print(f"发现分类: {current_category}")
             elif current_category:
                 # 解析直播源名称和 URL
                 parts = line.split(",", 1)
@@ -73,24 +45,18 @@ def parse_sources(file_path):
                     source_name, source_url = parts[0].strip(), parts[1].strip()
                     if source_url:  # 跳过空的 URL
                         categories[current_category].append((source_name, source_url))
-                        logging.info(f"添加直播源到分类 {current_category}: {source_name} -> {source_url}")
+                        print(f"添加直播源到分类 {current_category}: {source_name} -> {source_url}")
     return categories
 
 def check_live_source(source_url):
     """
-    检测单个直播源是否存活，发送 HTTP 请求检测一次。
+    检测单个直播源是否存活，模拟逻辑。
     """
-    try:
-        response = requests.get(source_url, timeout=DETECTION_TIMEOUT)
-        if response.status_code == 200:
-            logging.info(f"检测成功: {source_url} -> 存活")
-            return True
-        else:
-            logging.warning(f"检测失败: {source_url} -> 状态码 {response.status_code}")
-            return False
-    except requests.RequestException as e:
-        logging.error(f"检测失败: {source_url} -> 异常 {e}")
+    print(f"检测直播源：{source_url}")
+    time.sleep(0.1)  # 模拟检测延迟
+    if hash(source_url) % 7 == 0:  # 模拟随机失效
         return False
+    return hash(source_url) % 2 == 0
 
 def save_results(category, results):
     """
@@ -99,42 +65,34 @@ def save_results(category, results):
     🅰世界光影汇,#genre#
     📹直播中国,https://example.com/live1.m3u8
     """
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
     # 保存白名单
     with open(MERGED_OUTPUT_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category} (检测时间: {timestamp})\n")
+        f.write(f"{category}\n")
         for source_name, (source_url, status) in results.items():
             if status:  # 存活
                 f.write(f"{source_name},{source_url}\n")
-    logging.info(f"存活直播源已追加到 {MERGED_OUTPUT_FILE}。")
+    print(f"存活直播源已追加到 {MERGED_OUTPUT_FILE}。")
 
     # 保存黑名单
     with open(BLACKLIST_FILE, "a", encoding="utf-8") as f:
-        f.write(f"{category} (检测时间: {timestamp})\n")
+        f.write(f"{category}\n")
         for source_name, (source_url, status) in results.items():
             if not status:  # 失效
                 f.write(f"{source_name},{source_url}\n")
-    logging.info(f"失效直播源已追加到 {BLACKLIST_FILE}。")
+    print(f"失效直播源已追加到 {BLACKLIST_FILE}。")
 
 def check_category(category, sources):
     """
-    检测指定分类内的所有直播源，使用多线程加速。
+    检测指定分类内的所有直播源。
     """
     results = {}
-    with ThreadPoolExecutor(max_workers=THREAD_POOL_SIZE) as executor:
-        future_to_source = {
-            executor.submit(check_live_source, source_url): (source_name, source_url)
-            for source_name, source_url in sources
-        }
-        for future in as_completed(future_to_source):
-            source_name, source_url = future_to_source[future]
-            try:
-                is_alive = future.result()
-                results[source_name] = (source_url, is_alive)
-            except Exception as e:
-                logging.error(f"检测失败：{source_name} -> {e}")
-                results[source_name] = (source_url, False)
+    for source_name, source_url in sources:
+        try:
+            is_alive = check_live_source(source_url)
+            results[source_name] = (source_url, is_alive)
+        except Exception as e:
+            print(f"检测失败：{source_name} -> {e}")
+            results[source_name] = (source_url, False)
     save_results(category, results)
 
 def main():
@@ -145,13 +103,13 @@ def main():
     categories = parse_sources(SOURCE_FILE)
     category_list = list(categories.keys())
     if not category_list:
-        logging.info("没有分类可检测。")
+        print("没有分类可检测。")
         return
 
     # 每天检测一个分类
     today_index = datetime.now().timetuple().tm_yday % len(category_list)
     today_category = category_list[today_index]
-    logging.info(f"今天检测分类：{today_category}")
+    print(f"今天检测分类：{today_category}")
     check_category(today_category, categories[today_category])
 
 if __name__ == "__main__":
