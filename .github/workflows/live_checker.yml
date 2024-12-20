@@ -22,10 +22,15 @@ jobs:
         run: |
           python optimized_live_checker.py
 
-      - name: 推送结果
+      - name: 检查是否有更改
         run: |
           git config --global user.name "qingtingjjjjjjj"
           git config --global user.email "quwuping11@gmail.com"
-          git add .
-          git commit -m "更新检测结果 - $(date)"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "有更改，准备提交和推送"
+            git add .
+            git commit -m "更新检测结果 - $(date)"
+            git push
+          else
+            echo "没有需要提交的更改"
+          fi
