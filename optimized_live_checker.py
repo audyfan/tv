@@ -35,7 +35,7 @@ def parse_sources(file_path):
             if not line:
                 continue  # 跳过空行
             if line.endswith("#genre#"):  # 判断是否是分类标题
-                current_category = line[:-8].strip()  # 移除末尾的 "#genre#"
+                current_category = line.strip()  # 直接保留分类标题完整内容
                 categories[current_category] = []
                 print(f"发现分类: {current_category}")
             elif current_category:
@@ -60,29 +60,25 @@ def check_live_source(source_url):
 
 def save_results(category, results):
     """
-    保存检测结果到日志文件、白名单文件和黑名单文件。
+    保存检测结果到白名单文件和黑名单文件。
+    输出格式：
+    🅰世界光影汇,#genre#
+    📹直播中国,https://example.com/live1.m3u8
     """
-    date_str = datetime.now().strftime("%Y-%m-%d")
-    category_file = os.path.join(BASE_DIR, f"{date_str}_{category}.txt")
-
-    with open(category_file, "w", encoding="utf-8") as f:
-        for source_name, status in results.items():
-            f.write(f"{source_name} -> {'存活' if status else '失效'}\n")
-    print(f"分类 {category} 检测结果已保存到 {category_file}。")
-
-    alive_sources = [source_name for source_name, status in results.items() if status]
-    dead_sources = [source_name for source_name, status in results.items() if not status]
-
     # 保存白名单
     with open(MERGED_OUTPUT_FILE, "a", encoding="utf-8") as f:
-        for source in alive_sources:
-            f.write(source + "\n")
+        f.write(f"{category}\n")
+        for source_name, (source_url, status) in results.items():
+            if status:  # 存活
+                f.write(f"{source_name},{source_url}\n")
     print(f"存活直播源已追加到 {MERGED_OUTPUT_FILE}。")
 
     # 保存黑名单
     with open(BLACKLIST_FILE, "a", encoding="utf-8") as f:
-        for source in dead_sources:
-            f.write(source + "\n")
+        f.write(f"{category}\n")
+        for source_name, (source_url, status) in results.items():
+            if not status:  # 失效
+                f.write(f"{source_name},{source_url}\n")
     print(f"失效直播源已追加到 {BLACKLIST_FILE}。")
 
 def check_category(category, sources):
@@ -93,10 +89,10 @@ def check_category(category, sources):
     for source_name, source_url in sources:
         try:
             is_alive = check_live_source(source_url)
-            results[source_name] = is_alive
+            results[source_name] = (source_url, is_alive)
         except Exception as e:
             print(f"检测失败：{source_name} -> {e}")
-            results[source_name] = False
+            results[source_name] = (source_url, False)
     save_results(category, results)
 
 def main():
