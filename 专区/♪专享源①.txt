@@ -34,6 +34,14 @@ NewTV超级电视剧,http://[2409:8087:5e00:24::10]:6060/200000001898/4600000898
 NewTV超级电视剧,http://ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225716/index.m3u8
 NewTV超级电视剧,http://[2409:8087:74d9:21::6]/270000001128/9900000022/index.m3u8
 
+BBC,http://50.7.234.10:8278/bbc1_antik/playlist.m3u8?tid=MF9F5104188751041887&ct=19317&tsum=d9d161255fab7747b92a36b17e6fcf9a
+BBC1,http://50.7.234.10:8278/bbc1_antik/playlist.m3u8?tid=ME3E1183863811838638&ct=19254&tsum=0840dd585f58cedffd284559c0694b76
+阿里郎 Arirang,http://50.7.234.10:8278/arirang_twn/playlist.m3u8?tid=MF5F3988861839888618&ct=19249&tsum=781d490a6abe9f48f5b93e211cbe0307
+爱尔达影剧,http://50.7.234.10:8278/eltayingju_twn/playlist.m3u8?tid=MFFF8590726285907262&ct=19249&tsum=ae4cb19fed11696df934d6e2489e2978
+好萊塢電影,http://50.7.234.10:8278/hollywoodmovies_twn/playlist.m3u8?tid=MF6F7143280071432800&ct=19211&tsum=c0bc00f05a03eb1bef16741e9fd9737e
+新加坡8,http://50.7.234.10:8278/TV8/playlist.m3u8?tid=MDFD8437455184374551&ct=19225&tsum=ea08ca3d3651a75f499af2fc429eee35
+
+
 amc电影(中字),http://61.221.215.25:8800/hls/43/index.m3u8
 DISCOVERY亚洲,http://61.221.215.25:8800/hls/50/index.m3u8
 Disocovery(中字),http://61.221.215.25:8800/hls/1/index.m3u8
