@@ -34,7 +34,12 @@ NewTV超级电视剧,http://[2409:8087:5e00:24::10]:6060/200000001898/4600000898
 NewTV超级电视剧,http://ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225716/index.m3u8
 NewTV超级电视剧,http://[2409:8087:74d9:21::6]/270000001128/9900000022/index.m3u8
 
-PopC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
+amc电影(中字),http://61.221.215.25:8800/hls/43/index.m3u8
+DISCOVERY亚洲,http://61.221.215.25:8800/hls/50/index.m3u8
+Disocovery(中字),http://61.221.215.25:8800/hls/1/index.m3u8
+NHK国际http://61.221.215.25:8800/hls/51/index.m3u8
+
+POPC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
 ROCK Action,http://aktv.top/AKTV/live/aktv/rockaction/AKTV.m3u8
 tvN,http://aktv.top/AKTV/live/aktv/tvn/AKTV.m3u8
 美亞電影台(HK),http://aktv.top/AKTV/live/aktv/hk-1/AKTV.m3u8
