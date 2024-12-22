@@ -3,8 +3,6 @@
 北京卫视,https://tvbox.nat.netsite.cc:8043/proxy/1773564112/1773564112.m3u8
 东方卫视,https://tvbox.nat.netsite.cc:8043/proxy/694881013/694881013.m3u8
 东南卫视,https://tvbox.nat.netsite.cc:8043/proxy/698479958/698479958.m3u8
-凤凰卫视,https://tvbox.nat.netsite.cc:8043/proxy/1650326537/1650326537.m3u8
-凤凰卫视,https://tvbox.nat.netsite.cc:8043/proxy/1650326537/1650326537.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/1209404373/1209404373.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/1209404373/1209404373.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/910220240/910220240.m3u8
@@ -49,6 +47,7 @@
 浙江卫视,https://tvbox.nat.netsite.cc:8043/proxy/2059640241/2059640241.m3u8
 浙江卫视,https://tvbox.nat.netsite.cc:8043/proxy/257951448/257951448.m3u8
 重庆卫视,https://tvbox.nat.netsite.cc:8043/proxy/562106987/562106987.m3u8
+海峡卫视,http://php.jdshipin.com:8880/fujian.php?id=9
 
 东南卫视,http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226341/index.m3u8
 东南卫视,http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226377/index.m3u8
