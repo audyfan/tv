@@ -8,6 +8,7 @@
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/910220240/910220240.m3u8
 广东卫视,https://tvbox.nat.netsite.cc:8043/proxy/573869971/573869971.m3u8
 广西卫视,https://tvbox.nat.netsite.cc:8043/proxy/102904669/102904669.m3u8
+贵州卫视,http://[2409:8087:74d9:21::6]:80/270000001128/9900000036/index.m3u8
 贵州卫视,https://tvbox.nat.netsite.cc:8043/proxy/1494390345/1494390345.m3u8
 贵州卫视,https://tvbox.nat.netsite.cc:8043/proxy/189740973/189740973.m3u8
 海南卫视,https://tvbox.nat.netsite.cc:8043/proxy/200969914/200969914.m3u8
