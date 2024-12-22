@@ -1,11 +1,10 @@
+代理
 安徽卫视,https://tvbox.nat.netsite.cc:8043/proxy/149472807/149472807.m3u8
 北京卫视,https://tvbox.nat.netsite.cc:8043/proxy/1773564112/1773564112.m3u8
 东方卫视,https://tvbox.nat.netsite.cc:8043/proxy/694881013/694881013.m3u8
 东南卫视,https://tvbox.nat.netsite.cc:8043/proxy/698479958/698479958.m3u8
 凤凰卫视,https://tvbox.nat.netsite.cc:8043/proxy/1650326537/1650326537.m3u8
 凤凰卫视,https://tvbox.nat.netsite.cc:8043/proxy/1650326537/1650326537.m3u8
-福建东南卫视,https://tvbox.nat.netsite.cc:8043/proxy/1989099435/1989099435.m3u8
-福建海峡卫视,https://tvbox.nat.netsite.cc:8043/proxy/1400186150/1400186150.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/1209404373/1209404373.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/1209404373/1209404373.m3u8
 甘肃卫视,https://tvbox.nat.netsite.cc:8043/proxy/910220240/910220240.m3u8
