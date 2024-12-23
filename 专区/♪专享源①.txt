@@ -29,6 +29,11 @@ NewTV超级电视剧,http://[2409:8087:5e00:24::10]:6060/200000001898/4600000898
 NewTV超级电视剧,http://ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225716/index.m3u8
 NewTV超级电视剧,http://[2409:8087:74d9:21::6]/270000001128/9900000022/index.m3u8
 
+POPC,http://61.163.58.154:1321/kdsmua/msxg1.php?id=1
+环球电视台,http://zb.xzxwhcb.com:9999/hls/world.m3u8 
+美亚电视C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8 
+澳门莲花,http://php.jdshipin.com:8880/amlh.php
+
 无线功夫,http://v2h.jdshipin.com/asia_action1/1asia_action.stream/chunklist_w101.m3u8
 Astr剧集,http://php.jdshipin.com:8880/TVOD/iptv.php?id=aod
 HBO原創鉅獻,http://50.7.234.10:8278/hbosignature_twn/playlist.m3u8?tid=m48ee99a5dacb15948906&ct=17874&tsum=3d127801d49fa098b4118400117b4fbb
