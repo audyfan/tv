@@ -40,6 +40,8 @@ POPC,http://61.163.58.154:1321/kdsmua/msxg1.php?id=1
 环球电视台,http://zb.xzxwhcb.com:9999/hls/world.m3u8
 美亚电视C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
 澳门莲花,http://php.jdshipin.com:8880/amlh.php
+HBO Comedy,http://51.38.80.53:9981/stream/channelid/487206899?profile=pass
+HBO Family,http://51.38.80.53:9981/stream/channelid/1972290128?profile=pass
 
 无线功夫,http://v2h.jdshipin.com/asia_action1/1asia_action.stream/chunklist_w101.m3u8
 Astr剧集,http://php.jdshipin.com:8880/TVOD/iptv.php?id=aod
