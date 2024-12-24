@@ -1,3 +1,4 @@
+█████████████████████████████████████████████
 CCTV14,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225732/index.m3u8
 CCTV14,http://[2409:8087:5e00:24::11]:6060/200000001898/460000089800010207/
 CCTV14,https://stream1.freetv.fun/cctv-14-shao-er-2.m3u8
@@ -64,8 +65,8 @@ Nick动画2,http://37.27.111.214:8080/live/22/hls.m3u8
 蜡笔小新,http://120.77.28.4:8648/huya.php?id=11352970
 iHOT爱动漫,http://[2409:8087:5e08:24::11]:6610/000000001000/2000000004000000059/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000059&IASHttpSessionId=OTT19019320240419154124000281
 24H国漫热播,https://lunbo.freetv.top/yy/1353937086
-小猪佩奇,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
-YOYO TV,https://ghp.ci/https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV63.m3u8
+小猪佩奇,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/refs/heads/master/TV64.m3u8
+YOYO TV,https://ghp.ci/https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV63.m3u8
 YOYO TV,https://ythls.armelin.one/channel/UCiWRSesvSYmY7YOyz0tv_zQ.m3u8
 
 
@@ -75,3 +76,4 @@ Japanim TV,https://foxkidstv.be:3369/stream/play.m3u8
 Kuriakos Kids,https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8
 XilamTV,https://xilam-animation-1-fr.samsung.wurl.tv/playlist.m3u8
 FanpopTV,https://streaming-cl.sh1ny.space/memfs/e16d2f72-70b5-4bf5-b9c5-107b6390a10f.m3u8
+█████████████████████████████████████████████
