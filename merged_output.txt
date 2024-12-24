@@ -20200,43 +20200,7 @@ ELEVEN体育1,rtmp://f13h.mine.nu/sat/tv731
 nba tv,https://stream1.freetv.fun/nba-tv-1.ctv
 nba tv,https://stream1.freetv.fun/nba-tv-5.ctv
 skysports,https://stream1.freetv.fun/skysports-16.ctv
-
-
 电影频道,#genre#
-龙祥时代,p3p://167.114.175.6:55331/60115453000a238d32a1418142be77f7
-壹电视电影,mitv://135.148.104.228:19806/1be1329b6d124745a87a16de445d2352
-HBO,p3p://108.181.32.169:28526/64137f0b0006a17fa58238155813216c
-HBO,p3p://108.181.32.169:28526/645faf2100095cb2cf1c4442765c172b
-HBO,p3p://108.181.32.169:28526/645faf2e00057979cf1c760b55dd62b3
-HBO,p3p://167.114.175.6:55331/5fe6c3b3000ae0538c5e86154ed52a5b
-HBO Signature,p3p://108.181.32.169:28526/645fab94000cb9a6cf0e66527fc930bc
-HITS,p3p://167.114.175.6:55331/6233e648000735057db6cf734adf440d
-HITS,http://37.27.111.214:8080/live/28/hls.m3u8
-HITS Movies,P2p://generationnexxxt.com:19806/72b44f288c8c4c5baa031ec11d9e0e35
-天映,p3p://108.181.32.169:28526/64124e0f00045619a0dadf2552b73bf8
-天映,p3p://108.181.32.169:28526/64124e2b000b454ba0db4e4b137c6137
-天映,https://tv.doube.eu.org/tv?pid=2
-天映,https://histar-proxy.isus.cc/celestial
-天映,https://edge1.laotv.la:443/live/CHCA/index.m3u8
-天映,http://ali.hlspull.yximgs.com/live/huanqiuhklivejejcxlvofbjbvnjjsfjvbhfhcvxcvjsjbcvjfdvjsfcbjbnjtypj.flv
-天映经典,p3p://167.114.175.6:55331/5fded422000d0eb46d5f29815c1d4155
-天映经典,p3p://173.208.176.178:31809/5fded422000d0eb46d5f29815c1d4155
-天映经典,https://histar-proxy.isus.cc/cccm
-天映经典,p2p://generationnexxxt.com:19806/3ac31fa9f30145b68f8469b00d91b200
-天映经典,https://epg.pw/stream/cb817875cf26eb683af274dd8cdf7f559a71353d9565c32447c8d98894bc8095.ctv
-天映经典,http://ali.hlspull.yximgs.com/live/huanqiuhklivevcnydsjfjsetjjfcvbcdtsjjfvxcvsjnmbnljjhjjnmyhsjjftydj.flv
-BOO,p3p://108.181.32.169:28526/64137e860008ec16a58031233a436c8e
-BOO,p3p://167.114.175.6:55331/5fded40700033e036d5ebd8604bf417b
-CINEMAX,p3p://108.181.32.169:28526/645fa937000e6330cf052b7426d66c5d
-CINEMAX,https://bsex.serv00.net/Smart.php?id=cinemax_twn
-CINEMAX,http://50.7.238.114:8278/cinemax_twn/playlist.m3u8?tid=MF6F1142326311423263&ct=19254&tsum=716939f2b6d75d0bb83a4c780e00dbd3
-Animax,http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
-Animax,p3p://167.114.175.6:55331/61e0f9f0000ec6db45a9e87848424184
-Rock Action,http://104.244.79.187:4994/proxy?url=http%3A//104.244.79.187%3A5050/4gtv/180
-Rock Action,p3p://167.114.175.6:55331/65ad274400000b46bd92da681fce74f2
-Discovery,p3p://108.181.32.169:28526/645fa94600088bf9cf05648d374a43f3
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/146.m3u8
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/177.m3u8
 NewTV超级电影,http://[2409:8087:5e08:24::11]:6610/000000001000/1000000003000012426/1.m3u8?channel-id=ystenlive&Contentid=1000000003000012426&livemode=1&stbId=3
 NewTV超级电影,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225717/index.m3u8
 NewTV超级电影,http://[2409:8087:1a0a:df::4016]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225717/index.m3u8
@@ -21287,7 +21251,7 @@ TVBS欢乐,http://198.16.100.90:8278/tvbshuanle_twn/playlist.m3u8?tid=MA9A411140
 三立新闻,http://ali.hlspull.yximgs.com/live/7771ddsshabibscbmlsanlixw8886755464889eqoklhdjhflhfsdfagksh-9999547666-8845f-52660dfb346liLecbcdncnpfhgkdfghdlivcctv9HDopdeafaiiiisgdbkasdfsbiiilllll1llllllllllllllllllilldfsldhfsfjlfjfdsklf4dlkfdfgksfhskfsfddlafakfhajdfsaad.flv
 三立新闻,p3p://108.181.32.169:18612/64251e23000bcd04ea573d7c0f0a002e
 三立新闻,p3p://108.181.32.169:18118/64251e23000bcd04ea573d7c0f0a002e
-三立新闻,https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
+三立新闻,https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV32.m3u8
 三立新闻,http://wo.xiang.lai.ge.bi.jiao.chang.de.yu.ming.wan.wan.jie.xi.bu.zhi.dao.ke.bu.ke.xing.hk3.345888.xyz.cdn.cloudflare.net/gt/aktv.php?variable=null-14
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-5.ctv
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-4.m3u8
