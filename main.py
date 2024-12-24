@@ -589,6 +589,8 @@ all_lines_simple =  ["💐更新时间,#genre#"] +[version] +[about] +[daily_mtv
              ["🚀台湾台📶,#genre#"] + read_txt_to_array('专区/♪台湾台.txt') + ['\n'] + \
              ["🏠动作片🔁,#genre#"] + read_txt_to_array('专区/♪动作片.txt') + ['\n'] + \
              ["😱恐怖片🔁,#genre#"] + read_txt_to_array('专区/♪恐怖片.txt') + ['\n'] + \
+             ["🪐科幻片🔁,#genre#"] + read_txt_to_array('专区/♪科幻片.txt') + ['\n'] + \
+             ["💣战争片🔁,#genre#"] + read_txt_to_array('专区/♪战争片.txt') + ['\n'] + \
              ["🪁童梦乐园,#genre#"] + read_txt_to_array('专区/♪儿童专享.txt') + ['\n'] + \
              ["🏟️咪咕直播,#genre#"] + read_txt_to_array('专区/♪咪咕直播.txt') + ['\n'] + \
              ["🏀热血竞技⚽️,#genre#"] + read_txt_to_array('专区/♪sports.txt') + ['\n'] + \
@@ -614,6 +616,8 @@ all_lines =  ["💐更新时间,#genre#"] +[version]  +[about] +[daily_mtv] + ['
              ["🚀台湾台📶,#genre#"] + read_txt_to_array('专区/♪台湾台.txt') + ['\n'] + \
              ["🏠动作片🔁,#genre#"] + read_txt_to_array('专区/♪动作片.txt') + ['\n'] + \
              ["😱恐怖片🔁,#genre#"] + read_txt_to_array('专区/♪恐怖片.txt') + ['\n'] + \
+             ["🪐科幻片🔁,#genre#"] + read_txt_to_array('专区/♪科幻片.txt') + ['\n'] + \
+             ["💣战争片🔁,#genre#"] + read_txt_to_array('专区/♪战争片.txt') + ['\n'] + \
              ["🪁童梦乐园,#genre#"] + read_txt_to_array('专区/♪儿童专享.txt') + ['\n'] + \
              ["🏟️咪咕直播,#genre#"] + read_txt_to_array('专区/♪咪咕直播.txt') + ['\n'] + \
              ["🏀热血竞技⚽️,#genre#"] + read_txt_to_array('专区/♪sports.txt') + ['\n'] + \
