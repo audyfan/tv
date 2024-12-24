@@ -42,28 +42,6 @@ POPC,http://61.163.58.154:1321/kdsmua/msxg1.php?id=1
 环球电视台,http://zb.xzxwhcb.com:9999/hls/world.m3u8
 美亚电视C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
 澳门莲花,http://php.jdshipin.com:8880/amlh.php
-HBO Comedy,p3p://108.181.32.169:28526/645faf390002967ccf1ca046036d356a
-HBO,p3p://108.181.32.169:28526/64137f0b0006a17fa58238155813216c
-HBO1,p3p://108.181.32.169:28526/645fab94000cb9a6cf0e66527fc930bc
-HITS,p3p://167.114.175.6:55331/6233e648000735057db6cf734adf440d
-HITS,http://37.27.111.214:8080/live/28/hls.m3u8
-HITS Movies,P2p://generationnexxxt.com:19806/72b44f288c8c4c5baa031ec11d9e0e35
-天映,p3p://108.181.32.169:28526/64124e0f00045619a0dadf2552b73bf8
-天映,p3p://108.181.32.169:28526/64124e2b000b454ba0db4e4b137c6137
-天映,https://tv.doube.eu.org/tv?pid=2
-天映,https://histar-proxy.isus.cc/celestial
-天映,https://edge1.laotv.la:443/live/CHCA/index.m3u8
-天映,http://ali.hlspull.yximgs.com/live/huanqiuhklivejejcxlvofbjbvnjjsfjvbhfhcvxcvjsjbcvjfdvjsfcbjbnjtypj.flv
-BOO,p3p://108.181.32.169:28526/64137e860008ec16a58031233a436c8e
-BOO,p3p://167.114.175.6:55331/5fded40700033e036d5ebd8604bf417b
-CINEMAX,p3p://108.181.32.169:28526/645fa937000e6330cf052b7426d66c5d
-CINEMAX,https://bsex.serv00.net/Smart.php?id=cinemax_twn
-CINEMAX,http://50.7.238.114:8278/cinemax_twn/playlist.m3u8?tid=MF6F1142326311423263&ct=19254&tsum=716939f2b6d75d0bb83a4c780e00dbd3
-Animax,http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
-Animax,p3p://167.114.175.6:55331/61e0f9f0000ec6db45a9e87848424184
-Discovery,p3p://108.181.32.169:28526/645fa94600088bf9cf05648d374a43f3
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/146.m3u8
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/177.m3u8
 
 无线功夫,http://v2h.jdshipin.com/asia_action1/1asia_action.stream/chunklist_w101.m3u8
 Astr剧集,http://php.jdshipin.com:8880/TVOD/iptv.php?id=aod
@@ -21241,7 +21219,7 @@ TVBS欢乐,http://198.16.100.90:8278/tvbshuanle_twn/playlist.m3u8?tid=MA9A411140
 三立新闻,http://ali.hlspull.yximgs.com/live/7771ddsshabibscbmlsanlixw8886755464889eqoklhdjhflhfsdfagksh-9999547666-8845f-52660dfb346liLecbcdncnpfhgkdfghdlivcctv9HDopdeafaiiiisgdbkasdfsbiiilllll1llllllllllllllllllilldfsldhfsfjlfjfdsklf4dlkfdfgksfhskfsfddlafakfhajdfsaad.flv
 三立新闻,p3p://108.181.32.169:18612/64251e23000bcd04ea573d7c0f0a002e
 三立新闻,p3p://108.181.32.169:18118/64251e23000bcd04ea573d7c0f0a002e
-三立新闻,https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
+三立新闻,https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV32.m3u8
 三立新闻,http://wo.xiang.lai.ge.bi.jiao.chang.de.yu.ming.wan.wan.jie.xi.bu.zhi.dao.ke.bu.ke.xing.hk3.345888.xyz.cdn.cloudflare.net/gt/aktv.php?variable=null-14
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-5.ctv
 三立新闻,https://stream1.freetv.fun/san-li-xin-wen-4.m3u8
