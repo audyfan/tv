@@ -1,3 +1,4 @@
+█████████████████████████████████████████████
 28 AI 智慧賽馬,http://aktv.top/AKTV/live/aktv/28ai/AKTV.m3u8
 Channel 5 HD,http://aktv.top/AKTV/live/aktv/channel5hd/AKTV.m3u8
 Channel 8 HD,http://aktv.top/AKTV/live/aktv/channel8hd/AKTV.m3u8
@@ -207,3 +208,4 @@ Now爆谷,http://aktv.top/AKTV/live/aktv2/null/AKTV.m3u8
 澳门卫视,http://61.244.22.5/ch3/ch3.live/chunklist_w1228316132.m3u8
 澳门资讯,http://61.244.22.4/ch5/info_ch5.live/chunklist_w1046558591.m3u8
 澳门资讯,http://61.244.22.4/ch5/info_ch5.live/master.m3u8
+█████████████████████████████████████████████
