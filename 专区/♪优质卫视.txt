@@ -15,7 +15,6 @@
 河北卫视,https://tvbox.nat.netsite.cc:8043/proxy/1385861493/1385861493.m3u8
 河北卫视,https://tvbox.nat.netsite.cc:8043/proxy/1385861493/1385861493.m3u8
 河南卫视,https://tvbox.nat.netsite.cc:8043/proxy/251465659/251465659.m3u8
-黑龙江卫视,https://tvbox.nat.netsite.cc:8043/proxy/1993445467/1993445467.m3u8
 黑龙江卫视,https://tvbox.nat.netsite.cc:8043/proxy/982668357/982668357.m3u8
 湖北卫视,https://tvbox.nat.netsite.cc:8043/proxy/209398845/209398845.m3u8
 湖南卫视,https://tvbox.nat.netsite.cc:8043/proxy/480409838/480409838.m3u8
