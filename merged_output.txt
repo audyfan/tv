@@ -397,14 +397,14 @@ iHOT爱动漫,http://[2409:8087:5e08:24::11]:6610/000000001000/20000000040000000
 CCTV1,https://tvbox.nat.netsite.cc:8043/proxy/1387573383/1387573383.m3u8
 CCTV1,https://tvbox.nat.netsite.cc:8043/proxy/1464748337/1464748337.m3u8
 CCTV2,https://tvbox.nat.netsite.cc:8043/proxy/1865857764/1865857764.m3u8
-CCTV3,http://[2409:8087:74d9:21::6]:80/270000001128/9900000003/index.m3u8
+CCTV3,http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226021/index.m3u8
 CCTV4,https://tvbox.nat.netsite.cc:8043/proxy/1431251767/1431251767.m3u8
 CCTV4k,https://tvbox.nat.netsite.cc:8043/proxy/1810627534/1810627534.m3u8
 CCTV5,https://tvbox.nat.netsite.cc:8043/proxy/2118762958/2118762958.m3u8
 CCTV5+,https://tvbox.nat.netsite.cc:8043/proxy/485668034/485668034.m3u8
 CCTV6,https://tvbox.nat.netsite.cc:8043/proxy/584456678/584456678.m3u8
 CCTV7,https://tvbox.nat.netsite.cc:8043/proxy/1163485033/1163485033.m3u8
-CCTV8,http://[2409:8087:5e08:24::11]:6610/000000001000/5000000004000008888/index.m3u8?channel-
+CCTV8,http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226008/index.m3u8
 CCTV9,https://tvbox.nat.netsite.cc:8043/proxy/675916385/675916385.m3u8
 CCTV10,https://tvbox.nat.netsite.cc:8043/proxy/2131132936/2131132936.m3u8
 CCTV11,https://tvbox.nat.netsite.cc:8043/proxy/421024024/421024024.m3u8
@@ -21702,7 +21702,7 @@ TVBS欢乐,http://198.16.100.90:8278/tvbshuanle_twn/playlist.m3u8?tid=MA9A411140
 三立新闻,p3p://167.114.175.6:55331/6014c896000c7101401f67cc5477681b
 三立新闻,p3p://173.208.176.178:31809/6014c896000c7101401f67cc5477681b
 三立新闻,http://aktv.top/AKTV/live/aktv/null-14/AKTV.m3u8
-三立新闻,https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
+三立新闻,https://raw.dgithub.xyz/ChiSheng9/iptv/master/TV32.m3u8
 三立新闻,p3p://108.181.32.169:24626/64251e23000bcd04ea573d7c0f0a002e
 三立新闻,http://ali.hlspull.yximgs.com/live/7771ddsshabibscbmlsanlixw8886755464889eqoklhdjhflhfsdfagksh-9999547666-8845f-52660dfb346liLecbcdncnpfhgkdfghdlivcctv9HDopdeafaiiiisgdbkasdfsbiiilllll1llllllllllllllllllilldfsldhfsfjlfjfdsklf4dlkfdfgksfhskfsfddlafakfhajdfsaad.flv
 三立新闻,p3p://108.181.32.169:18612/64251e23000bcd04ea573d7c0f0a002e
