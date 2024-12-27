@@ -7,3 +7,5 @@
 每天自动爬取源，自动更新。
 
 ## 技术员塔利班：QQ476901432
+二次元修改：原程序专享大佬提供：https://github.com/kimwang1978/collect-tv-txt.git 觉得好可以进入仓库捐赠！
+感谢专享大佬，直播接口：https://live.iptv365.org/live.txt
