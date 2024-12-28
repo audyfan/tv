@@ -33,6 +33,6 @@ jobs:
       - name: Invalidate Cloudflare Cache
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/zones/<zhixue.byun.nyc.mn>/purge_cache" \
-          -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
+          -H "Authorization: Bearer ${{ 9AI4w8hfx4Ph-D9bD_kEKlf6N8lLstrsTR1gPU8Q }}" \
           -H "Content-Type: application/json" \
           --data '{"purge_everything":true}'
