@@ -1,0 +1,56 @@
+name: Pull Live Source from R2 on Update
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小时检查一次
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  check-live-source-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Step 2: 下载 live_sources.txt 文件并保存到本地
+      - name: Download Live Source List from R2
+        run: |
+          curl -o ./live_sources.txt https://zhixue.byun.nyc.mn/%E7%9F%A5%E9%9B%AA.txt
+
+      # Step 3: 获取文件的最后更新时间戳（使用`date`命令来比较）
+      - name: Get Last Modified Time of Live Source File
+        id: file_time
+        run: |
+          last_modified_time=$(curl -sI https://zhixue.byun.nyc.mn/%E7%9F%A5%E9%9B%AA.txt | grep -i "last-modified" | cut -d' ' -f2-)
+          echo "Last Modified Time: $last_modified_time"
+          echo "::set-output name=last_modified_time::$last_modified_time"
+
+      # Step 4: 获取当前本地文件的修改时间（如果已经拉取过一次文件）
+      - name: Get Last Commit Time in Repository
+        id: repo_time
+        run: |
+          # 获取最近一次提交的时间
+          commit_time=$(git log -1 --format=%cd)
+          echo "Last Commit Time: $commit_time"
+          echo "::set-output name=commit_time::$commit_time"
+
+      # Step 5: 比较文件的修改时间，如果有更新则提交文件
+      - name: Check if file has been updated
+        run: |
+          if [ "${{ steps.file_time.outputs.last_modified_time }}" != "${{ steps.repo_time.outputs.commit_time }}" ]; then
+            echo "Live Source has been updated. Proceeding to update the repository."
+            
+            # 1. 更新仓库中的文件
+            curl -o ./live_sources.txt https://zhixue.byun.nyc.mn/%E7%9F%A5%E9%9B%AA.txt
+            
+            # 2. 将文件提交到 GitHub 仓库
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add ./live_sources.txt
+            git commit -m "Update live sources from R2"
+            git push
+          else
+            echo "No updates found. Skipping commit."
+          fi
