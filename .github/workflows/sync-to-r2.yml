@@ -1,0 +1,38 @@
+name: Sync Live Sources to R2
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天 UTC 时间零点触发一次（可根据需求调整）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync-to-r2:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Step 2: Upload live sources to Cloudflare R2
+      - name: Upload Live Sources to R2
+        run: |
+          # 安装 AWS CLI（R2 使用兼容 AWS S3 协议）
+          sudo apt-get install awscli -y
+          
+          # 配置 AWS CLI 来访问 R2 存储桶
+          aws configure set aws_access_key_id ${{ secrets.R2_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_KEY }}
+          aws configure set region us-east-1
+          aws configure set output json
+          
+          # 上传文件到 R2 存储桶（替换为您的存储桶名称）
+          aws --endpoint-url https://<zhixue-tv> s3 cp ./merged_output.txt s3://<zhixue-tv>/merged_output.txt
+
+      # 可选步骤：如果需要，清除 Cloudflare 缓存
+      - name: Invalidate Cloudflare Cache
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/<your-zone-id>/purge_cache" \
+          -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          --data '{"purge_everything":true}'
