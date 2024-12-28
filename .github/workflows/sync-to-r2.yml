@@ -1,4 +1,4 @@
-name: Sync Live Sources to R2
+name: Sync Live Sources to R2 
 
 on:
   schedule:
