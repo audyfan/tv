@@ -1,4 +1,4 @@
-name: Sync Live Sources to R2 
+name: Sync Live Sources to R2
 
 on:
   schedule:
@@ -26,17 +26,13 @@ jobs:
           aws configure set region us-east-1
           aws configure set output json
           
-          # 确认文件存在
-          echo "Verifying file existence:"
-          ls -l ./merged_output.txt
-
-          # 上传文件到 R2 存储桶（目标路径包含中文字符）
-          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com s3 cp ./merged_output.txt s3://zhixue-tv/知雪.txt --acl public-read
+          # 上传文件到 R2 存储桶（替换为您的存储桶名称）
+          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com s3 cp ./merged_output.txt s3://zhixue-tv/%E7%9F%A5%E9%9B%AA.txt --acl public-read --content-type "text/plain"
 
       # 可选步骤：如果需要，清除 Cloudflare 缓存
       - name: Invalidate Cloudflare Cache
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/<your-zone-id>/purge_cache" \
           -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
           -H "Content-Type: application/json" \
           --data '{"purge_everything":true}'
