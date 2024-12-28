@@ -2,7 +2,7 @@ name: Pull Live Source from R2 on Update
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 每小时检查一次
+    - cron: '30 23 * * *'  # 每天 UTC 时间 23:30 执行一次
   workflow_dispatch:  # 允许手动触发
 
 jobs:
