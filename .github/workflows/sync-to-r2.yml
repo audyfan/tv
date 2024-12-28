@@ -26,8 +26,13 @@ jobs:
           aws configure set region us-east-1
           aws configure set output json
           
+          # 确认文件路径和存储桶路径
+          echo "当前路径：$(pwd)"
+          echo "上传文件：./merged_output.txt"
+          
           # 上传文件到 R2 存储桶（替换为您的存储桶名称）
-          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com s3 cp ./merged_output.txt s3://zhixue-tv/%E7%9F%A5%E9%9B%AA.txt --acl public-read --content-type "text/plain"
+          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com \
+            s3 cp ./merged_output.txt s3://zhixue-tv/%E7%9F%A5%E9%9B%AA.txt --acl public-read --content-type "text/plain"
 
       # 可选步骤：如果需要，清除 Cloudflare 缓存
       - name: Invalidate Cloudflare Cache
