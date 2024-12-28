@@ -14,33 +14,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # Step 2: Set up AWS CLI and configure R2 credentials
-      - name: Set up AWS CLI
-        run: |
-          # 安装 AWS CLI（R2 使用兼容 AWS S3 协议）
-          sudo apt-get install awscli -y
-
-          # 配置 AWS CLI 来访问 R2 存储桶
-          aws configure set aws_access_key_id ${{ secrets.R2_ACCESS_KEY }}
-          aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_KEY }}
-          aws configure set region us-east-1
-          aws configure set output json
-
-      # Step 3: Upload live sources to Cloudflare R2
+      # Step 2: Upload live sources to Cloudflare R2 without AWS CLI
       - name: Upload Live Sources to R2
         run: |
           # 确认文件路径和存储桶路径
           echo "当前路径：$(pwd)"
           echo "上传文件：./merged_output.txt"
           
-          # 上传文件到 R2 存储桶（替换为您的存储桶名称）
-          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com \
-            s3 cp ./merged_output.txt s3://zhixue-tv/%E7%9F%A5%E9%9B%AA.txt --acl public-read --content-type "text/plain" --debug
+          # 使用 curl 直接上传文件到 R2 存储桶
+          curl -X PUT --data-binary @./merged_output.txt \
+            -H "Content-Type: text/plain" \
+            -H "x-amz-acl: public-read" \
+            https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com/zhixue-tv/%E7%9F%A5%E9%9B%AA.txt
 
       # 可选步骤：如果需要，清除 Cloudflare 缓存
       - name: Invalidate Cloudflare Cache
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/<your-zone-id>/purge_cache" \
           -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_KEY }}" \
           -H "Content-Type: application/json" \
           --data '{"purge_everything":true}'
