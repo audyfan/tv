@@ -27,7 +27,7 @@ jobs:
           aws configure set output json
           
           # 上传文件到 R2 存储桶（替换为您的存储桶名称）
-          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com/zhixue-tv s3 cp ./merged_output.txt s3://zhixue-tv/merged_output.txt
+          aws --endpoint-url https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com s3 cp ./merged_output.txt s3://zhixue-tv/merged_output.txt
 
       # 可选步骤：如果需要，清除 Cloudflare 缓存
       - name: Invalidate Cloudflare Cache
