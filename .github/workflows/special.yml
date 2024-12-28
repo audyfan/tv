@@ -2,7 +2,7 @@ name: 'Daily Job(special)'
 
 on:
   schedule:
-    - cron: '30 23 * * *'  # UTC
+    - cron: '0 */4 * * *'  # 每 4 小时执行一次
   workflow_dispatch:
     inputs:
       environment:
