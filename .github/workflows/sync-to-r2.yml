@@ -1,0 +1,33 @@
+name: Sync to Cloudflare R2
+
+on:
+  push:
+    branches:
+      - main  # 当代码推送到主分支时触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出 GitHub 仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 安装 AWS CLI 工具
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      # 配置并将文件同步到 R2
+      - name: Sync files to Cloudflare R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          aws configure set aws_access_key_id "$R2_ACCESS_KEY_ID"
+          aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
+          aws configure set region "auto"
+          aws s3 sync ./ s3://<your-bucket-name> --delete
