@@ -2,8 +2,8 @@ name: Sync Files to Cloudflare R2
 
 on:
   schedule:
-    - cron: '50 23 * * *'
-  workflow_dispatch:
+    - cron: '50 23 * * *' # 每天的 23:50 自动运行
+  workflow_dispatch: # 手动触发工作流
 
 jobs:
   sync:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Set up AWS CLI
+    - name: Install AWS CLI
       run: |
         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
         unzip awscliv2.zip
@@ -25,17 +25,23 @@ jobs:
         R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
         R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       run: |
-        # 配置 AWS CLI 的 R2 凭证和区域
+        # 配置 AWS CLI 的 R2 凭证
         aws configure set aws_access_key_id "$R2_ACCESS_KEY_ID"
         aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
         aws configure set region "auto"
         aws configure set output json
         
-        # 设置 Cloudflare R2 的 S3 兼容端点 URL
-        aws configure set s3.endpoint_url "https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com"
-        
-        # 清除 AWS CLI 缓存（防止使用默认 AWS S3 端点）
-        aws configure set cli_follow_urlparam false
+        # 使用 S3 兼容的 Cloudflare R2 端点
+        export AWS_DEFAULT_REGION=auto
+        export AWS_ENDPOINT="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 
-        # 同步 live.txt 文件到 Cloudflare R2
-        aws s3 cp ./live.txt s3://optimization/live.txt
+        # 同步 live.txt 文件到 R2
+        aws s3 cp ./live.txt s3://optimization/live.txt --endpoint-url "$AWS_ENDPOINT"
+
+    - name: Verify upload
+      env:
+        R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+        R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      run: |
+        export AWS_ENDPOINT="https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com"
+        aws s3 ls s3://optimization --endpoint-url "$AWS_ENDPOINT"
