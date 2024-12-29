@@ -1,33 +1,38 @@
-name: Sync to Cloudflare R2
+name: Sync Files to Cloudflare R2
 
 on:
-  push:
-    branches:
-      - main  # 当代码推送到主分支时触发
+  schedule:
+    # 每天美国时间 23:50 执行一次
+    - cron: '50 23 * * *'  # 这里是 UTC 时间，所以需要计算时差
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出 GitHub 仓库代码
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout the repository
+      uses: actions/checkout@v2
 
-      # 安装 AWS CLI 工具
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+    - name: Set up AWS CLI
+      run: |
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
 
-      # 配置并将文件同步到 R2
-      - name: Sync files to Cloudflare R2
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-        run: |
-          aws configure set aws_access_key_id "$R2_ACCESS_KEY_ID"
-          aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
-          aws configure set region "auto"
-          aws s3 sync ./ s3://<your-bucket-name> --delete
+    - name: Sync files to Cloudflare R2
+      env:
+        R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+        R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+        R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      run: |
+        aws configure set aws_access_key_id "$R2_ACCESS_KEY_ID"
+        aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
+        aws configure set region "auto"  # 区域设置为 "auto"
+        aws configure set output json  # 输出格式设置为 JSON
+
+        # 设置 R2 的 endpoint URL (Cloudflare R2 使用的是 S3 API)
+        aws configure set s3.endpoint_url "https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com"
+
+        # 同步本地文件到 R2 存储桶，替换 <your-bucket-name> 为你的存储桶名称
+        aws s3 sync ./ s3://<your-bucket-name> --delete
