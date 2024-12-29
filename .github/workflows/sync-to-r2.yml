@@ -29,6 +29,7 @@ jobs:
         aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
         aws configure set region "auto"
         aws configure set output json
+        # 使用 Cloudflare R2 的 S3 兼容端点 URL
         aws configure set s3.endpoint_url "https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com"
         
         # 使用 aws s3 cp 同步 live.txt 文件
