@@ -25,12 +25,17 @@ jobs:
         R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
         R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       run: |
+        # 配置 AWS CLI 的 R2 凭证和区域
         aws configure set aws_access_key_id "$R2_ACCESS_KEY_ID"
         aws configure set aws_secret_access_key "$R2_SECRET_ACCESS_KEY"
         aws configure set region "auto"
         aws configure set output json
-        # 使用 Cloudflare R2 的 S3 兼容端点 URL
+        
+        # 设置 Cloudflare R2 的 S3 兼容端点 URL
         aws configure set s3.endpoint_url "https://f0f6bddeda81f13cec09327818e9348b.r2.cloudflarestorage.com"
         
-        # 使用 aws s3 cp 同步 live.txt 文件
+        # 清除 AWS CLI 缓存（防止使用默认 AWS S3 端点）
+        aws configure set cli_follow_urlparam false
+
+        # 同步 live.txt 文件到 Cloudflare R2
         aws s3 cp ./live.txt s3://optimization/live.txt
