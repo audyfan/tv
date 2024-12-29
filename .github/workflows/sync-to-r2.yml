@@ -31,5 +31,5 @@ jobs:
         aws configure set output json
         aws configure set s3.endpoint_url "https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com"
         
-        # 同步 `live.txt` 文件到 Cloudflare R2 存储桶
-        aws s3 cp ./live.txt s3://optimization/live.txt --delete
+        # 使用 aws s3 cp 同步 live.txt 文件
+        aws s3 cp ./live.txt s3://optimization/live.txt
