@@ -40,19 +40,20 @@ CHC动作电影,http://1.192.250.104:9901/tsfile/live/1002_1.m3u8
 CHC家庭影院,http://1.192.250.104:9901/tsfile/live/1001_1.m3u8
 CHC影迷电影,http://1.192.250.104:9901/tsfile/live/1000_1.m3u8
 1905电影网(内),http://php.jdshipin.com:8880/1905.php?id=1905dy
-1905电影网(外),https://tvbox.nat.netsite.cc:8043/proxy/1747360543/1747360543.m3u8
+好莱坞电影台,http://50.7.234.10:8278/hollywoodmovies_twn/playlist.m3u8?tid=MECE5611281156112811&ct=19225&tsum=ad8884ee16b04f885f24bae98fc5fb9f
+
 Arirang,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b2256000_sleng.m3u8
 POPC,http://aktv.top/AKTV/live/aktv/popc/AKTV.m3u8
 POPC备,http://61.163.58.154:1321/kdsmua/msxg1.php?id=1
-环球电视台,http://zb.xzxwhcb.com:9999/hls/world.m3u8 
-美亚电视C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8 
+POPC备用,http://61.163.58.154:1321/kdsmua/cs.php?id=10
+环球电视台,http://zb.xzxwhcb.com:9999/hls/world.m3u8
+美亚电视C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
 澳门莲花,http://php.jdshipin.com:8880/amlh.php
 
-POPC备用,http://61.163.58.154:1321/kdsmua/cs.php?id=10
 星空卫视,http://61.163.58.154:1321/kdsmua/cs.php?id=4
 HBO,http://61.163.58.154:1321/kdsmua/cs.php?id=61
 HBO,http://61.163.58.154:1321/kdsmua/cs.php?id=62
-HBO signature,http://61.163.58.154:1321/kdsmua/cs.php?id=63
+HBO Signature,http://61.163.58.154:1321/kdsmua/cs.php?id=63
 CINEMAX,http://61.163.58.154:1321/kdsmua/cs.php?id=65
 数位电影,http://61.163.58.154:1321/kdsmua/cs.php?id=55
 now爆谷台,http://61.163.58.154:1321/kdsmua/ms2.php?id=12
@@ -63,17 +64,15 @@ now爆谷台,http://61.163.58.154:1321/kdsmua/ms2.php?id=12
 天映经典,http://61.163.58.154:1321/kdsmua/cs.php?id=13
 澳门莲花,http://61.163.58.154:1321/kdsmua/cs.php?id=14
 中国电影,http://61.163.58.154:1321/kdsmua/cs.php?id=15
-
 无线功夫,http://v2h.jdshipin.com/asia_action1/1asia_action.stream/chunklist_w101.m3u8
-Astr剧集,http://php.jdshipin.com:8880/TVOD/iptv.php?id=aod
-HBO原創鉅獻,http://50.7.234.10:8278/hbosignature_twn/playlist.m3u8?tid=m48ee99a5dacb15948906&ct=17874&tsum=3d127801d49fa098b4118400117b4fbb
+
 J2,http://50.7.234.10:8278/j2_twn/playlist.m3u8?tid=MA8A1176878411768784&ct=19225&tsum=fea41bb592165942b9971148376f8b70
 BBC,http://50.7.234.10:8278/bbc1_antik/playlist.m3u8?tid=MF9F5104188751041887&ct=19317&tsum=d9d161255fab7747b92a36b17e6fcf9a
 阿里郎 Arirang,http://50.7.234.10:8278/arirang_twn/playlist.m3u8?tid=MF5F3988861839888618&ct=19249&tsum=781d490a6abe9f48f5b93e211cbe0307
 爱尔达影剧,http://50.7.234.10:8278/eltayingju_twn/playlist.m3u8?tid=MFFF8590726285907262&ct=19249&tsum=ae4cb19fed11696df934d6e2489e2978
 好萊塢電影,http://50.7.234.10:8278/hollywoodmovies_twn/playlist.m3u8?tid=MF6F7143280071432800&ct=19211&tsum=c0bc00f05a03eb1bef16741e9fd9737e
 新加坡8,http://50.7.234.10:8278/TV8/playlist.m3u8?tid=MDFD8437455184374551&ct=19225&tsum=ea08ca3d3651a75f499af2fc429eee35
-好莱坞电影,http://zby.xjqxz.top/hlwdy1/live.m3u8
+好莱坞电影2,http://zby.xjqxz.top/hlwdy1/live.m3u8
 amc电影(中字),http://61.221.215.25:8800/hls/43/index.m3u8
 DISCOVERY亚洲,http://61.221.215.25:8800/hls/50/index.m3u8
 Disocovery(中字),http://61.221.215.25:8800/hls/1/index.m3u8
@@ -88,8 +87,7 @@ tvN,http://aktv.top/AKTV/live/aktv/tvn/AKTV.m3u8
 AXN,http://aktv.top/AKTV/live/aktv2/axn/AKTV.m3u8
 i-Fun 動漫台,http://aktv.top/AKTV/live/aktv2/ifun/AKTV.m3u8
 Love Nature HD,http://aktv.top/AKTV/live/aktv2/lovenaturehd/AKTV.m3u8
-Now星影台,http://aktv.top/AKTV/live/aktv2/now/AKTV.m3u8
-Now爆谷台,http://aktv.top/AKTV/live/aktv2/now-1/AKTV.m3u8
+
 Animax(HK),http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
 Astro AEC,http://aktv.top/AKTV/live/aktv3/astroaec/AKTV.m3u8
 Astro iQIYI,http://aktv.top/AKTV/live/aktv3/astroiqiyi/AKTV.m3u8
@@ -116,37 +114,8 @@ AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8
 AMC电影,https://4gtv.mytvsuper.xyz/4gtv.php?id=4gtv-4gtv017
 AMC电影,http://tw.ts138.top/4g/?id=4gtv-4gtv017
 
-HBO,p3p://108.181.32.169:21311/64137f0b0006a17fa58238155813216c
-HBO,p3p://108.181.32.169:21311/645faf2100095cb2cf1c4442765c172b
-HBO,p3p://108.181.32.169:21311/645faf2e00057979cf1c760b55dd62b3
-HBO,p3p://167.114.175.6:55331/5fe6c3b3000ae0538c5e86154ed52a5b
-HBO,https://zf.315600.xyz/proxy/http://125.227.210.55:8153/VideoInput/play.ts
-HBO Signature,p3p://108.181.32.169:21311/645fab94000cb9a6cf0e66527fc930bc
-HITS,p3p://167.114.175.6:55331/6233e648000735057db6cf734adf440d
-HITS,http://37.27.111.214:8080/live/28/hls.m3u8
-天映,p3p://108.181.32.169:21311/64124e0f00045619a0dadf2552b73bf8
-天映,p3p://108.181.32.169:21311/64124e2b000b454ba0db4e4b137c6137
-天映,https://histar-proxy.isus.cc/celestial
-天映,https://edge1.laotv.la:443/live/CHCA/index.m3u8
-天映,http://ali.hlspull.yximgs.com/live/huanqiuhklivejejcxlvofbjbvnjjsfjvbhfhcvxcvjsjbcvjfdvjsfcbjbnjtypj.flv
-天映经典,p3p://167.114.175.6:55331/5fded422000d0eb46d5f29815c1d4155
-天映经典,p3p://173.208.176.178:31809/5fded422000d0eb46d5f29815c1d4155
-天映经典,https://histar-proxy.isus.cc/cccm
-天映经典,p2p://generationnexxxt.com:19806/3ac31fa9f30145b68f8469b00d91b200
-天映经典,https://epg.pw/stream/cb817875cf26eb683af274dd8cdf7f559a71353d9565c32447c8d98894bc8095.ctv
-天映经典,http://ali.hlspull.yximgs.com/live/huanqiuhklivevcnydsjfjsetjjfcvbcdtsjjfvxcvsjnmbnljjhjjnmyhsjjftydj.flv
-BOO,p3p://108.181.32.169:21311/64137e860008ec16a58031233a436c8e
-BOO,p3p://167.114.175.6:55331/5fded40700033e036d5ebd8604bf417b
-CINEMAX,p3p://108.181.32.169:21311/645fa937000e6330cf052b7426d66c5d
-CINEMAX,https://bsex.serv00.net/Smart.php?id=cinemax_twn
-CINEMAX,http://50.7.238.114:8278/cinemax_twn/playlist.m3u8?tid=MF6F1142326311423263&ct=19254&tsum=716939f2b6d75d0bb83a4c780e00dbd3
-
 Animax,http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
 Animax,p3p://167.114.175.6:55331/61e0f9f0000ec6db45a9e87848424184
-Discovery,p3p://108.181.32.169:28526/645fa94600088bf9cf05648d374a43f3
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/146.m3u8
-Discovery,http://ott.watch/stream/E9LDH2ZCN7/177.m3u8
-
 东森电影,http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MDED1943740419437404&ct=19225&tsum=120834a4218c4b5c3bb19efb8116f859
 东森戏剧,http://50.7.234.10:8278/ettvdrama/playlist.m3u8?tid=m921dcb630ebe17354109&ct=17874&tsum=695370160923af940d1a90d44c262acc
 东森戏剧,http://50.7.234.10:8278/ettvdrama/playlist.m3u8?tid=MA2A9945921599459215&ct=19249&tsum=c9097ecdf4a17c0922196dbf04b0c6e7
@@ -159,9 +128,6 @@ Discovery,http://ott.watch/stream/E9LDH2ZCN7/177.m3u8
 龙华电影,http://37.27.111.214:8080/live/19/hls.m3u8
 龙华电影,http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8
 龙华电影,http://211.72.65.236:8556/.m3u8
-靖天电影,https://4gtv.mytvsuper.xyz/4gtv.php?id=4gtv-4gtv061
-
-緯来电影,http://108.181.20.215:44779
 采昌影剧,https://stream1.freetv.fun/0bc646a16e8318982972d11e7e26b2a38bafee9be98597045b97e82f2e6bf588.ctv
 澳门莲花,http://php.jdshipin.com:8880/amlh.php
 龙华电影,http://37.27.111.214:8080/live/19/hls.m3u8
@@ -183,16 +149,9 @@ CHC影迷电影,http://124.231.213.16:9999/tsfile/live/1110_1.m3u8
 CHC影迷电影,http://eastscreen.tv/ooooo.php?id=chchd
 CHC动作电影,http://eastscreen.tv/ooooo.php?id=chcdz
 CHC家庭影院,http://eastscreen.tv/ooooo.php?id=chcjt好莱坞电影台,http://50.7.234.10:8278/hollywoodmovies_twn/playlist.m3u8?tid=MA8A4005638840056388&ct=18392&tsum=a1f1517d4ea64fd01267905f21d83859
-好莱坞电影台,http://50.7.234.10:8278/hollywoodmovies_twn/playlist.m3u8?tid=MECE5611281156112811&ct=19225&tsum=ad8884ee16b04f885f24bae98fc5fb9f
-N1905 极限反转,http://dns.yiandrive.com:16813/1905/1905a
-1905 环球经典,http://dns.yiandrive.com:16813/1905/1905b
-iHot亚洲影院,http://[2409:8087:5e08:24::11]:6610/000000001000/2000000004000000006/1.m3u8?channel-id=hnbblive&Contentid=2000000004000000006&livemode=1&stbId=3
-iHot亚洲影院,http://[2409:8087:5e08:24::11]:6610/000000001000/5841816227539527643/1.m3u8?channel-id=wasusyt&Contentid=5841816227539527643&livemode=1&stbId=3
-iHot欧美影院,http://[2409:8087:5e08:24::11]:6610/000000001000/2000000004000000005/1.m3u8?channel-id=hnbblive&Contentid=2000000004000000005&livemode=1&stbId=3
-iHot欧美影院,http://[2409:8087:5e08:24::11]:6610/000000001000/7185203501769528108/1.m3u8?channel-id=wasusyt&Contentid=7185203501769528108&livemode=1&stbId=3
+Now星影台,http://aktv.top/AKTV/live/aktv2/now/AKTV.m3u8
+Now爆谷台,http://aktv.top/AKTV/live/aktv2/now-1/AKTV.m3u8
 
-🔁周星星,http://159.75.85.63:35455/huya/11342412
-🔁杰森斯坦森,http://159.75.85.63:35455/huya/21059588
 ▶️(2024)阴阳师,https://svip.high22-playback.com/20240731/5755_91995ca9/index.m3u8
 ▶️(2024)哥斯拉大战金刚2：帝国崛起,https://api.heimuer.app/play/6f3edeb2885149e4b30f676e8a94ef3b.m3u8
 ▶️(2024)绝地战警：生死与共,https://v3.tlkqc.com/wjv3/202406/12/gFunRiZvHb75/video/index.m3u8
@@ -221,6 +180,7 @@ iHot欧美影院,http://[2409:8087:5e08:24::11]:6610/000000001000/71852035017695
 鹿鼎记,https://lunbo.freetv.top/yy/1354658049
 我不是药神,https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8
 让子弹飞,https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8
+█████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 ********************************************************************************************************************************************************************************************************************
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
