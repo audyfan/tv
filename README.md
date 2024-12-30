@@ -12,7 +12,6 @@
 
 - **merged_output.txt**：直播源合并输出的文本文件。
 - **merged_output.m3u**：M3U 格式的直播源文件，适用于播放软件。
-- **live_sources.txt**：直播源的原始地址列表。
 
 文件托管在 GitHub 并通过 Cloudflare 加速。
 
