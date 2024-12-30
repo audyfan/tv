@@ -1,9 +1,12 @@
 name: Sync Files to Cloudflare R2
 
 on:
-  # 每天美国东部时间 23:50 执行任务
+  # 定时触发：每天 23:50 UTC（美国东部时间 19:50，夏令时 UTC-4）
   schedule:
-    - cron: '50 23 * * *'  # 这是 UTC 时间 23:50 对应美国东部时间（ET）的 19:50
+    - cron: '50 23 * * *'  # 这是 UTC 时间 23:50，等同于美国东部时间 19:50
+  # 手动触发：你可以在 GitHub Actions 页面点击 "Run workflow" 来手动触发
+  workflow_dispatch:   # 这个部分允许手动触发工作流
+
   push:
     branches:
       - main
