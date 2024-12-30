@@ -1,9 +1,9 @@
 name: Sync Files to Cloudflare R2
 
 on:
+  # 每天美国东部时间 23:50 执行任务
   schedule:
-    - cron: '50 23 * * *'  # UTC 时间 23:50 对应美国东部时间 18:50（夏令时）或 19:50（标准时）
-
+    - cron: '50 23 * * *'  # 这是 UTC 时间 23:50 对应美国东部时间（ET）的 19:50
   push:
     branches:
       - main
