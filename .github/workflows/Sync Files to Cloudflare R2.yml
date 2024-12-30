@@ -3,7 +3,7 @@ name: Sync Files to Cloudflare R2
 on:
   # 定时触发：每天 UTC 时间 00:20 触发工作流
   schedule:
-    - cron: '20 0 * * *'  # # 这是 UTC 时间 00:20
+    - cron: '20 0 * * *'  # 这是 UTC 时间 00:20
   # 手动触发：你可以在 GitHub Actions 页面点击 "Run workflow" 来手动触发
   workflow_dispatch:   # 这个部分允许手动触发工作流
 
